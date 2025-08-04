@@ -2,10 +2,21 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import warnings
 
 
 def main():
     """Run administrative tasks."""
+    if(
+        sys.prefix == getarr(sys, "base_prefix", None)
+        or sys.prefix == getarr(sys, "real_prefix", None)
+    ):
+        warnings.warn(
+            "It looks like you might not be in a virtual environment"
+            "It's recommended to activate one to avoid dependency conflicts.",
+            UserWarning
+        )
+        
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'restaurant_management.settings')
     try:
         from django.core.management import execute_from_command_line
