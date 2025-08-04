@@ -2,6 +2,23 @@ from django.db import models
 
 # Create your models here
 from django.contrib.auth.models import User
+from django.contrib import admin
+from .models import menu, Order
+
+admin.site.register(Menu)
+admin.site.register(Order)
+
+class MenuAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price')
+    search_fields = ('name',)
+
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('id', 'customer', 'total_amount', 'order_status', 'created_at')
+    list_filter = ('order_status', 'created_at')
+    search_fields = ('customer__username', )
+
+admin.site.register(Menu, MenuAdmin)
+admin.site.register(Order, OrderAdmin)
 
 class Menu(models.Model):
     name = models.CharField(max_length=100)
