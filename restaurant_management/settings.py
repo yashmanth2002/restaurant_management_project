@@ -127,3 +127,6 @@ RESTAURANT_NAME = "Tandoori Flame"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEBUG = False
+ALLOWED_HOSTS = ['*']
+'DIRS': [BASE_DIR/ 'templates'],
