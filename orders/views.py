@@ -22,3 +22,8 @@ class MenuAPIView(APIView):
             {'name': 'Gulab Jamun', 'price': 90},
         ]
         return render(request, 'menu_preview.html', {'menu_items': menu_items})
+
+    def homepage_view(request):
+        return render(request, 'home/homepage.html', {
+            'restaurant_name': 'Spice Garden'
+        })
