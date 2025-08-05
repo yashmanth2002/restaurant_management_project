@@ -7,5 +7,12 @@
             <h1 class="text-center display-4 mb-4">Welcome to {{ restaurant_name }}</h1>
             <p class="lead text-center">Experience flavors that linger on your palate </p>
         </div>
+        <nav>
+            <ul style="list-style: none; display: flex; gap: 20px;">
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li><a href="{% url 'restaurant_page' %}">About Us</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+            </ul>
+        </nav>
     </body>
 
