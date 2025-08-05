@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About {{ restaurant.name }}</title>
+        <style>
+            body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fdfdfd;
+            color: #333
+            margin: 0;
+            padding: 20px;
+            }
+            .container{
+            max-width: 900px;
+            margin: auto;
+            }
+            h1 {
+            color: #007b5e;
+            }
+            img {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>About {{ restaurant.name }}</h1>
+            <p>{{ restaurant.description }}</p>
+            {% if restaurant.image_url %}
+            <img src="{{ restaurant.image_url }}" alt="{{ restaurant.name }}">
+            {% endif %}
+        </div>
+    </body>
+</html>
