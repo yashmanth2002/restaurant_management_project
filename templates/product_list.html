@@ -1,0 +1,13 @@
+{% if error %}
+<div style="color: red; background-color: #ffe6e6; padding: 10px; border-radius: 5px;">
+    {{ error }}
+</div>
+{% endif %}
+
+<ul>}
+    {% for product in products %}
+    <li>{{ product.name  }}</li>
+    {% empty %}
+    <li> No products available.</li>
+    {% endfor %}
+</ul>
