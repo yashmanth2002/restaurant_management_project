@@ -131,3 +131,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 'DIRS': [BASE_DIR/ 'templates'],
+
+TEMPLATES= [{
+    'OPTIONS': {
+        'context_processors': [
+            'your_app.context_processors.current_year',
+
+        ],
+    },
+},
+]
