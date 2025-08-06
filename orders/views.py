@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import render
 from django.shortcuts import render
+from datetime import datetime
+from django.shortcuts import render
 
 
 
@@ -33,3 +35,9 @@ class MenuAPIView(APIView):
 
     def reservations_view(request):
         return render(request, 'Reservations.html')
+
+    def your_view(request):
+        context = {
+            'current_year': datetime.now().year,
+        }
+        return render(request, 'your_template.html', context)
