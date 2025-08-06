@@ -33,5 +33,12 @@
         {% extends 'HTML base.html' %}
         <!-- Page-specific content -->
         {% endblock %}
+        <form id="contactform">
+            <input type="text" id="name" placeholder="Your Name" />
+            <input type="email" id="email" placeholder="Your Email"/>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="error" style="color: red;"</p>
+            }
     </body>
 </html>
