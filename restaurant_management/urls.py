@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.urls import path
+from .views import feedback_view
 
 
 urlpatterns = [
@@ -24,4 +26,5 @@ urlpatterns = [
     path('api/accounts/',include('account.urls')),
     path('api/products/',include('products.urls')),
     path('api/orders/',include('orders.urls')),
+    path('feedback/', feedback_view, name='feedback'),
 ]
