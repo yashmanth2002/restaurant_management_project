@@ -55,3 +55,16 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return self.name
+
+class Restaurant(models.Model):
+    name = models.CharField(max_length=100)
+    address = models.CharField(max_length=255)
+    opening_hours = models.JSONField(default=dict)
+
+
+    def __str__(self):
+        return self.name
+
+
+
+
