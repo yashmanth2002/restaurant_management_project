@@ -7,4 +7,5 @@ urlpatterns = [
     path('items/', ItemView.as_view(), name='item-list'),
     path('reservations/', reservations_view, name='reservations')
     path('', home, name='home'),
+    path('', home, name='home')
 ]
