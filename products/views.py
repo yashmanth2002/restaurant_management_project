@@ -7,6 +7,7 @@ from .serializers import ItemSerializer
 from django.shortcuts import render
 from .models import Restaurant
 from restaurant_management.models import Restaurant
+from .models restaurant import Restaurant
 
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
@@ -36,3 +37,8 @@ class ItemView(APIView):
         def homepage(request):
             restaurant = Restaurant.objects.first()
             return render(request,'home/homepage.html', {'restaurant': restaurant})
+
+
+def home(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, 'home.html', {'restaurant': restaurant})
