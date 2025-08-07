@@ -42,3 +42,7 @@ class ItemView(APIView):
 def home(request):
     restaurant = Restaurant.objects.first()
     return render(request, 'home.html', {'restaurant': restaurant})
+
+def home(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, 'home.html', {'restaurant': restaurant})
