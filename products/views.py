@@ -8,7 +8,7 @@ from django.shortcuts import render
 from .models import Restaurant
 from restaurant_management.models import Restaurant
 from .models restaurant import Restaurant
-
+from .forms import ContactForm
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
 '''
@@ -46,3 +46,15 @@ def home(request):
 def home(request):
     restaurant = Restaurant.objects.first()
     return render(request, 'home.html', {'restaurant': restaurant})
+
+
+def contant_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
