@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from datetime import datetime
 from django.shortcuts import render
-
+from .models import MenuItem
 
 
 class MenuAPIView(APIView):
@@ -41,3 +41,8 @@ class MenuAPIView(APIView):
             'current_year': datetime.now().year,
         }
         return render(request, 'your_template.html', context)
+
+    def menu_view(request):
+        menu_items = MenuItem.objects.all()
+        return render(request, 'menu.html', {'menu_items': menu_items})
+
