@@ -23,3 +23,7 @@ def home(request):
     else:
         menu_items = MenuItem.objects.all()
     return render(request, 'home.html', {'menu_items': menu_items })
+
+def home(request):
+    restaurant = Restaurant.objects.all()
+    return render(request, 'home.html', {'restaurant': restaurant})
