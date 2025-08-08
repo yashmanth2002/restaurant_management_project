@@ -46,3 +46,8 @@ class MenuAPIView(APIView):
         menu_items = MenuItem.objects.all()
         return render(request, 'menu.html', {'menu_items': menu_items})
 
+        def home(request):
+            restaurant = Restaurant.objects.first()
+            return render(request, 'home.html', {'restaurant': restaurant})
+
+
