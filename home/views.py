@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.shortcuts import render
 from .models import MenuItem
+from django.shortcuts imort render
 
 # Create your views here.
 def contact_us_view(request):
@@ -27,3 +28,6 @@ def home(request):
 def home(request):
     restaurant = Restaurant.objects.all()
     return render(request, 'home.html', {'restaurant': restaurant})
+
+def faq_view(request):
+    
