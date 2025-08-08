@@ -1,5 +1,7 @@
 from django.db import models
 from django.db import models
+from django.db import models
+from django.contrib.auth.models import User
 # Create your models here.
 class Contact(models.Model):
     name = models.Charfield(max_length=100)
@@ -24,3 +26,16 @@ class RestaurantLocation(models.Model):
 
     def __str__(self):
         return f"{self.address}, {self.city}, {self.state}, {self.zip_code}"
+
+class Item(models.Model):
+    name = models.Charfield(max_length=100)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+
+class Cart(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    items = models.ManyToManyField(Item, through=CartItem)
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    Item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
