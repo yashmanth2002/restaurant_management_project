@@ -155,3 +155,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TEMPLATES = [{
+    'OPTIONS': {
+        'context_processors': [
+            'django.template.context_processors.request',
+            'django.template.context_processors.tz'
+        ]
+    }
+}]
