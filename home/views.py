@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.shortcuts import render
 from .models import MenuItem
+
 # Create your views here.
 def contact_us_view(request):
     form = ContactForm(request.POST or None)
