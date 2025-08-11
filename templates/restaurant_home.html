@@ -3,5 +3,8 @@
     <p>Your go-to spot for delicious meals, cozy vibes, and unforgettable flavor.</p>
     <div class="contact-info">
         <p>call Us: <strong>{{ restaurant_phone }}</strong></p>
+        <div class="order-now-container">
+            <a href="{% url 'place_'order.url' %}" class="order-now-btn">Order Now</a>
+        </div>
     </div>
 </div>
