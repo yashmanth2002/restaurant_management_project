@@ -44,3 +44,18 @@ class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     logo = models.ImageField(upload_to='logos/', blank=True, null=True)
     phone_number = models.CharField(max_length=15, blank=True, null=True)
+
+def menu_view(request):
+    breadcrumbs = [{'name': 'menu', 'url', ' '}]
+    return render(request, 'menu.html', {'breadcrumbs': breadcrumbs})
+
+def order_confirmation_view(request):
+    order_number = get_random_string(length=8).upper()
+    breadcrumbs = [
+        {'name': 'Menu', 'url': reverse('menu')}
+        {'name': 'Order Confirmation', 'url': ' '}
+    ]
+    return render(request, 'order_confirmation.html', {
+        'order_number': order_number,
+        'breadcrumbs': breadcrumbs
+    })
