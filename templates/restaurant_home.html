@@ -5,6 +5,27 @@
         <p>call Us: <strong>{{ restaurant_phone }}</strong></p>
         <div class="order-now-container">
             <a href="{% url 'place_'order.url' %}" class="order-now-btn">Order Now</a>
+            <div class="login-section">
+                <h2>Login</h2>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    <div class="form-group">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                        {{ form.username.errors }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                        {{ form.password.errors }}
+                    </div>
+
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
