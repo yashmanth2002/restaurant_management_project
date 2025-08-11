@@ -58,3 +58,7 @@ def contant_view(request):
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
+
+def home_view(request):
+    breadcrumbs = []
+    return render(request, 'restaurant_home.html', {'breadcrumbs': breadcrumbs})
