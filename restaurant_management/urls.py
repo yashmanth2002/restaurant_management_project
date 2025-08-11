@@ -24,9 +24,10 @@ from django.conf.urls.static import static
 from .views import contact_view, success_view
 from .views import contact_view
 from django.urls import include,path
+from .views import order_confirmation_view
 
 
-urlpatterns = [
+urlpatterns += [
     path('admin/', admin.site.urls),
     path('api/',include('home.urls')),
     path('api/accounts/',include('account.urls')),
@@ -40,6 +41,7 @@ urlpatterns = [
     path('success/', success_view, name='success')
     path('contact/', contact_view, name='contact'),
     path('', include('contact.urls')),
+    path('order/confirmation/', order_confirmation_view, name='order_confirmation'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
