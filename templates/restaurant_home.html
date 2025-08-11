@@ -22,7 +22,22 @@
                         {{ form.password }}
                         {{ form.password.errors }}
                     </div>
-
+                    <div class="specials-section">
+                        <h2>Tpday's Specials</h2>
+                        {% if Specials %}
+                        <ul class="specials-list">
+                            {% for item in Specials %}
+                            <li>
+                                <h3>{{ item.name }}</h3>
+                                <p>{{ description }}</p>
+                                <p><strong>{{ item.price }}</strong></p>
+                                <li>
+                                    {% endfor %}
+                                </ul>
+                                {% else %}
+                                <p>No Specials available today. Check back later!</p>
+                                {% endif %}
+                    </div>
                     <button type="submit" class="login-btn">Login</button>
                 </form>
                 <footer>
