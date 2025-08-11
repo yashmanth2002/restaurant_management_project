@@ -164,3 +164,13 @@ TEMPLATES = [{
         ]
     }
 }]
+
+RESTAURANT_PHONE = "+91 98765 43210"
+
+TEMPLATES = [{
+    'OPTIONS': {
+        'context_processors': [
+            'restaurant.context_processors.restaurnt_info'
+        ]
+    }
+}]
