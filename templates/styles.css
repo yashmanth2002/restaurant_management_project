@@ -134,3 +134,18 @@
 .home-link:hover {
     background-color: #1b5e20;
 }
+
+.breadcrumb {
+    font-size: 14px;
+    margin: 20px 0;
+    color: #555;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumb span {
+    color: #333;
+}
