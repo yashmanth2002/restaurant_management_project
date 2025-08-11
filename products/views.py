@@ -62,3 +62,6 @@ def contant_view(request):
 def home_view(request):
     breadcrumbs = []
     return render(request, 'restaurant_home.html', {'breadcrumbs': breadcrumbs})
+
+def privacy_policy_view(request):
+    breadcrumbs = [{'name': 'Privacy_policy.html', {'breadcrumbs': breadcrumbs}}]
