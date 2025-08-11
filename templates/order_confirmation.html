@@ -1,0 +1,9 @@
+<div class="confirmation-container">
+    <h1>Order Confirmed!</h1>
+    <p>Thank you for your order. We're preparing it with care.</p>
+    {% if order_number %}
+    <p><strong>Order Number:</strong> {{ order_number }}</p>
+    {% endif %}
+
+    <a href="/" class="home-link">Back to Home</a>
+</div>
