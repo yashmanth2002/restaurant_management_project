@@ -6,6 +6,8 @@ from django.shortcuts import render
 from datetime import datetime
 from django.shortcuts import render
 from .models import MenuItem
+from .models import TodaySpecial
+from django.utils.timeZone import now
 
 
 class MenuAPIView(APIView):
@@ -50,4 +52,12 @@ class MenuAPIView(APIView):
             restaurant = Restaurant.objects.first()
             return render(request, 'home.html', {'restaurant': restaurant})
 
+def home_view(request):
+    today = now().date()
+    specials = TodaySpecial.objects.filter(created_at=today)
+    breadcrumbs = []
+    return render(request, 'restaurant_home.html', {
+        'specials': specials,
+        'breadcrumbs': breadcrumbs
+    })
 
