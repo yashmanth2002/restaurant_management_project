@@ -100,3 +100,37 @@
 .login-btn:hover {
     background-color: #0056b3;
 }
+
+.confirmation-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #e8f5e9;
+    border-radius: 10px;
+    text-align:  center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-container h1 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.confirmation-container p {
+    font-size: 18px;
+    color: #333;
+}
+
+.home-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-link:hover {
+    background-color: #1b5e20;
+}
