@@ -11,4 +11,5 @@ urlpatterns = [
     path('', home, name='home')
     path('order/', views.place_order_view, name='place_order')
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('privacy-policy/', privacy_policy_view, name='privacy_policy'),
 ]
