@@ -8,4 +8,10 @@
     <span>{{ crumb.name }}</span>
     {% endif %}
     {% endfor %}
+    <nav class="breadcrumb">
+        <a href="{{ crumb.url }}">{{ crumb.name }}</a>
+        {% else %}
+        <span>{{ crumb.name }}</span>
+        {% endif %}
+        {% endfor %}
 </nav>
