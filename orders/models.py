@@ -78,7 +78,14 @@ class TodaySpecial(models.Model):
     def __str__(self):
         return self.name
    
+class RestaurantInfo(models.Model):
+    name = models.CharField(max_length=100)
+    address = models.TextField()
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
 
+    def __str__(self):
+        return self.name
 
 
 
