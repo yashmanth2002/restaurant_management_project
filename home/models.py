@@ -80,4 +80,10 @@ class Chef(models.Model):
     image = models.ImageField(upload_to='chef_images/')
 
     def __str__(self):
-        return self.name    x
+        return self.name    
+
+class MenuItem(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='menu/')
+    alt_text = models.CharField(max_length=255, default='', blank=True)
