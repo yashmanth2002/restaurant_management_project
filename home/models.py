@@ -2,6 +2,8 @@ from django.db import models
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+
 # Create your models here.
 class Contact(models.Model):
     name = models.Charfield(max_length=100)
@@ -71,3 +73,11 @@ class OpeningHours(models.Model):
 
     def __str__(self):
         return f"{self.day}: {self.open_time} - {self.close_time}
+
+class Chef(models.Model):
+    name = models.CharField(max_length=100)
+    bio = models.TextField()
+    image = models.ImageField(upload_to='chef_images/')
+
+    def __str__(self):
+        return self.name    x
