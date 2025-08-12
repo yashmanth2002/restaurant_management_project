@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Us</title>
+    </head>
+    <body>
+        <div class="about-us">
+            <h2>{{ about.title }}</h2>
+            <p>{{ about.description }}</p>
+            {% if about.image %}
+            <img src="{{ about.image.url }}" alt="Our Restaurant" class="restaurant-image">
+            {% endif %}
+        </div>
+    </body>
+</html>
