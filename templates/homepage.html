@@ -10,6 +10,11 @@
                 {% for day, hours in opening_hours.items %}
                 <li><strong>{{ day }}</strong>{{ hours }}</li>
                 {% endfor %}
+                <nav class="breadcrumb">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                    </ul>
+                </nav>
             </ul>
         </section>
     </body>
