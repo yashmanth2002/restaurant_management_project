@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Contact</title>
+        <title>Contact Us</title>
     </head>
     <body>
-        <h2>Contact Us</h2>
-        {% if restaurant_info %}
-        <p><strong>Address:</strong>{{ restaurant_info.address }}</p>
-        <p><strong>Phone:</strong>{{ restaurant_info.phone }}</p>
-        <p><strong>Email:</strong>{{ restaurant_info.email }}</p>
-        {% else %}
-        <p>Contact information is currently unavailable.</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send</button>
+        </form>
+
+        {% if form.errors %}
+        <div class="form-errors"
+        <ul>
+            {% for field in form %}
+            {% for error in field.errors %}
+            <li><strong>{{ field.label }}:</strong>{{ error }}</li>
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        </div>
         {% endif %}
     </body>
 </html>
