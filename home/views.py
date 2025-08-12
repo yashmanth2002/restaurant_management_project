@@ -6,6 +6,8 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import AboutUs
 from .serializers import AboutUsSerializer
+from django.shortcuts import render, request
+from .forms import ContactForm
 
 
 
@@ -38,3 +40,12 @@ class AboutUsSerializer(generics.RetrieveUpdateAPIView):
     queryset = AboutUs.generics.all()
     serializer_class = AboutUsSerializer
     
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('thank_you')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
