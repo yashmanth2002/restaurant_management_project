@@ -17,5 +17,6 @@ urlpatterns = [
     path('feedback/', submit_feedback, name='submit_feedback')
     path('contact/', contact_view, name='contact')
     path('contact/thank-you/', thank_you_view, name='thank_you')
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
