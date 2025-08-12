@@ -8,6 +8,8 @@ from django.shortcuts import render
 from .models import MenuItem
 from .models import TodaySpecial
 from django.utils.timeZone import now
+from django.shortcuts import render
+from .models import RestaurantInfo
 
 
 class MenuAPIView(APIView):
@@ -60,4 +62,8 @@ def home_view(request):
         'specials': specials,
         'breadcrumbs': breadcrumbs
     })
+
+def contact_view(request):
+    info = RestaurantInfo.objects.first()
+    return render(request, 'contact.html', {'restaurant_info': info})
 
