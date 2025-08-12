@@ -2,33 +2,15 @@
 <html>
     <head>
         <title>Menu</title>
-        <style>
-            .menu-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 15px;
-            width: 300px;
-            display: inline-block;
-            vertical-align: top;
-            text-align: center;
-
-            }
-            .menu-item img {
-            max-width: 100%;
-            height: auto;
-            }
-            </style>
     </head>
     <body>
-        <h1>Our  Menu</h1>
-        <div class="menu">
-            {% for item in menu-items %}
-            <div class="menu-item">
-                <img src="{{ item.image.url }} "alt="{{ item.name }}">
-                <h2>{{ item.name }}</h2>
-                <p>{{ item.description }}</p>
-                <p><strong>{{ item.price }}</strong></p>
-            </div>
-            {% endfor %}
+        {% for item in page_obj %}
+        <div class="menu-item">
+            <img src="{{ item.image.url }}" alt="{{ item.alt_text }}">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <span class="price">{{ item.price }}</span>
+        </div>
+        {% endfor %}
     </body>
 </html>
