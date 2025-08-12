@@ -1,33 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Menu Search</title>
+        <title>Homepage Background</title>
     </head>
     <body>
-        <h1>Search Menu Items</h1>
-        <form method="GET" action="">
-            <input type="text" name="q" placeholder="Search for menu items...">
-            <button type="submit">Search</button>
-        </form>
-        <ul>
-            {% for item in menu_items %}
-            <li>{{ item.name }}- {{item.description }}- {{item.price}}</li>
-            {% empty %}
-            <li>No menu items found.</li>
-            {% endfor %}
-            {% for item in menu_items %}
-            <div class="menu-item">
-                <h2>{{ item.name }}</h2>
-                <p>{{ item.description }}</p>
-                <p>{{ item.price }}</p>
-                {% if item.image %}
-                <img src="{{ item.image.url }}" alt="{{ item.name }}" style="max-width: 300px;">
-                {% endif %}
+        <div class="homepage-background">
+            <div class="homepage-content">
+                <h1>Welcome to Our Restaurant</h1>
+                <p>Delicious food, cozy ambiance, and unforgettable experiences.</p>
+                <a href="{% url 'order_now' %}" class="cta=button">Order Now</a>
             </div>
-            {% endfor %}
-        </ul>
-        <section class="datetime-section">
-            <h3>Current Date $ Time</h3>
-            <p>{{ Current_time }}</p>
+        </div>
     </body>
 </html>
