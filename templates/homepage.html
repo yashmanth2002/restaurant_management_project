@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{ restaurant_name }} - Welcome</title>
+        <title>Homepage</title>
     </head>
     <body>
-        <header>
-            <h1>{{ restaurant_name }}</h1>
-            <p>Welcome to our restaurant! We're glad you're here - make yourself at home.</p>
-            {% extends 'HTML_base.html %'}
-
-            {% block content %}
-            <div class="container">
-                <h1>Welcome to {{ restaurant.address }}</p>
-                <p><strong>Address</strong>{{ restaurant.address}}</p>
-                </div>
-                {% endblock %}
-        </header>
+        <section class="opening-hours">
+            <h2>opening Hours</h2>
+            <ul>
+                {% for day, hours in opening_hours.items %}
+                <li><strong>{{ day }}</strong>{{ hours }}</li>
+                {% endfor %}
+            </ul>
+        </section>
     </body>
 </html>
