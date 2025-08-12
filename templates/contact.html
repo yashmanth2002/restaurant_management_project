@@ -1,30 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Contact Us</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <title>Contact</title>
     </head>
-    <body class="bg-light">
-        <div class="container py-5"
-        <h1 class="text-center mb-4">Contact Us</h1>
-        <p class="text-center lead">We'd love to hear from you! Reach out using the info below:</p>
-
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-6">
-                <div class="card-shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Our Info</h5>
-                        <p class="card-text">
-                            <strong>Address:</strong>456 Culinary Lane, Hyderabad, TG, India<br>
-                            <strong>Phone</strong>+91 98765 43210<br>
-                            <strong>Email:</strong>hello@restaurantdemo.com
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
+    <body>
+        <h2>Contact Us</h2>
+        {% if restaurant_info %}
+        <p><strong>Address:</strong>{{ restaurant_info.address }}</p>
+        <p><strong>Phone:</strong>{{ restaurant_info.phone }}</p>
+        <p><strong>Email:</strong>{{ restaurant_info.email }}</p>
+        {% else %}
+        <p>Contact information is currently unavailable.</p>
+        {% endif %}
     </body>
 </html>
-
