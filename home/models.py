@@ -59,3 +59,15 @@ def order_confirmation_view(request):
         'order_number': order_number,
         'breadcrumbs': breadcrumbs
     })
+
+class OpeningHours(models.Model):
+    day = models.CharField(max_length=10)
+
+    open_time = models.TimeField()
+    close_time = models.TimeField()
+
+    class Meta:
+        ordering = ['id']
+
+    def __str__(self):
+        return f"{self.day}: {self.open_time} - {self.close_time}
