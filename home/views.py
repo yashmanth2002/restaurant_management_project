@@ -2,7 +2,12 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.shortcuts import render
 from .models import MenuItem
-from django.shortcuts imort render
+from django.shortcuts import render
+from rest_framework import generics
+from .models import AboutUs
+from .serializers import AboutUsSerializer
+
+
 
 # Create your views here.
 def contact_us_view(request):
@@ -29,5 +34,7 @@ def home(request):
     restaurant = Restaurant.objects.all()
     return render(request, 'home.html', {'restaurant': restaurant})
 
-def faq_view(request):
+class AboutUsSerializer(generics.RetrieveUpdateAPIView):
+    queryset = AboutUs.generics.all()
+    serializer_class = AboutUsSerializer
     
