@@ -12,5 +12,23 @@
             <span class="price">{{ item.price }}</span>
         </div>
         {% endfor %}
+        {% extends 'base.html' %}
+        {% block content %
+        
+        <h1>Our Menu</h1>
+        <form method="get" action="{% url 'menu' %}">
+            <input type="text" name="q" placeholder="Search menu items..." value="{{ query }}">
+            <button type="submit">Search</button>
+        </form>
+
+        <hr>
+        <ul>
+            {% for item in items %}
+            <li>{{ item.name }} - {{ item.price }}</li>
+            {% empty %}
+            <li>No matching menu items found.</li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
     </body>
 </html>
