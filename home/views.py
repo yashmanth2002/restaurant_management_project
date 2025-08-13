@@ -12,6 +12,9 @@ from .models import OpeningHours
 from .django.shortcuts import render
 from .django.shortcuts import render
 from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import SubscriberForm
 
 
 
@@ -70,3 +73,15 @@ def contact(request):
         messages.success(request, "Thank you, your message has been sent!")
         return redirect('contact')
     return render(request, 'contact.html')
+
+
+def homepage(request):
+    if request.method == 'POST':
+        form = SubscriberForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you for subxcribing!")
+            return redirect('home')
+    else:
+        form = SubscriberForm()
+    return render(request, 'home.html', {'form': form})
