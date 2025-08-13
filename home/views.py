@@ -15,6 +15,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import SubscriberForm
+from django.shortcuts import render
 
 
 
@@ -85,3 +86,11 @@ def homepage(request):
     else:
         form = SubscriberForm()
     return render(request, 'home.html', {'form': form})
+
+
+
+def home(request):
+    context = {
+        'page_title': 'Spice Garden - Authentic Indian Cuisine in Hyderabad'
+    }
+    return render(request, 'home.html', context)
