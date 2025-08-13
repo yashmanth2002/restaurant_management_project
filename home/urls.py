@@ -6,6 +6,12 @@ from django.conf.urls.static import static
 from .views import submit_feedback
 from django.urls import path
 from .views import contact_view, thank_you_view
+from django.urls import path
+from . import views
+
+
+
+
 
 urlpatterns = [
     path('contact/', contact_page, name='contact'),
@@ -18,5 +24,6 @@ urlpatterns = [
     path('contact/', contact_view, name='contact')
     path('contact/thank-you/', thank_you_view, name='thank_you')
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('about/', views.about, name='about')
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
