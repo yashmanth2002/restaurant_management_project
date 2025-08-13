@@ -14,5 +14,29 @@
                 <li><a href="{% url 'contact' %">Contact</a></li>
             </ul>
         </nav>
+        {% extends 'base.html' %}
+        <h1>Welcome to Spice Garden</h1>
+
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="https://source.unsplash.com/800*400/?restaurant,food" alt="Restaurant Image 1">
+                <img src="https://source.unsplash.com/800*400/?cuisine" alt="Restaurant Image 2">
+                <img src="https://source.unsplash.com?800*400/?dining" alt="Restaurant Image 3">
+            </div>
+        </div>
+        {% endblock %}
+
+        <script>
+            let index = 0;
+            const images = document.querySelectorAll('.carousel-images img');
+
+            function showslide() {
+            images.forEach((img, i)) => {
+            img.style.display = (i == index)? 'block': 'none'
+            });
+            }
+            showslide();
+            setInterval(showslide, 3000)
+            </script>
     </body>
 </html>
