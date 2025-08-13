@@ -10,6 +10,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 
@@ -27,5 +29,7 @@ urlpatterns = [
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     path('about/', views.about, name='about')
     path('', views.homepage, name='home'),
+    path('', views.home, name='home'),
+    path('reservations/', views.reservations, name='reservations')
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
