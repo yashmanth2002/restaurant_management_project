@@ -16,6 +16,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import SubscriberForm
 from django.shortcuts import render
+from django.shortcuts import render
 
 
 
@@ -94,3 +95,6 @@ def home(request):
         'page_title': 'Spice Garden - Authentic Indian Cuisine in Hyderabad'
     }
     return render(request, 'home.html', context)
+
+def reservations(request):
+    return render(request, 'reservations.html')
