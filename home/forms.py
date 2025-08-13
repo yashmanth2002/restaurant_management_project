@@ -1,11 +1,13 @@
 from django import forms
-from .models import Feedback
+from .models import Subscriber
 
-class FeedbackForm(forms.ModelForm):
+class SubscriberForm(forms.ModelForm):
     class Meta:
-        model = Feedback
-        fields = ['name', 'feedback']
+        model = Subscriber
+        fields = ['email']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Your name'}),
-            'feedback': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your feedback'}),
+            'email': forms.EmailInput(attrs={
+                'placeholder': 'Enter your email',
+                'class': 'email-input'
+            })
         }
