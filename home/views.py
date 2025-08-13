@@ -18,6 +18,9 @@ from .forms import SubscriberForm
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 
@@ -104,3 +107,28 @@ def reservations(request):
 
 def our_story(request):
     return render(request, 'our_story.html')
+
+
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        user_email = request.POST.get('email')
+        message = request.POST.get('message')
+
+    send_mail(
+        subject="Thank you for contacting Spice Garden",
+        message=(
+            f"Hello {name},/n/n"
+            "We have recieved your message and will get back to you shortly.\n\n 
+            "Your Message:\n"
+            f"{message}\n\n"
+            "Warm regards, \nSpice Garden Team"
+        ), 
+        from_email=settings.EMAIL_HOST_USER,
+        recipient_list=[user_email],
+        fail_silently=False,
+    )
+    return render(request, 'contact_sucess.html', {'name': name})
+
+return render(request, 'contact.html')
