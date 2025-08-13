@@ -1,44 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Homepage Background</title>
+        <title>Spice Garden - Authentic Indian Cuisine in Hyderabad</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
-        <img src="{% static 'images/logo.png' %}">
-        <div class="homepage-background">
-            <div class="homepage-content">
-                <h1>Welcome to Our Restaurant</h1>
-                <p>Delicious food, cozy ambiance, and unforgettable experiences.</p>
-                <a href="{% url 'order_now' %}" class="cta=button">Order Now</a>
-            </div>
-        </div>
-        {% extends "base.html" %}
-
-        {% block title %}Home{% endblock %}
-
-        {%block content %}
-        <h1>Welcome to Our Website</h1>
-        <p>Subscribe to our newsletter for updates!</p>
-
-        {% if messages %}
-        {% for message in messages %}
-        <div style="padding: 10px; background-color: #d4edda; color: #155724; border-radius: 5px; margin-bottom: 10px;">
-            {{ message }}
-        </div>
-        {% endif %}
-
-        <form method="post">
-            {% csrf_token %}
-            {{ form.email }}
-            <button type="submit">Subscribe</button>
-        </form>
-        {% endblock %}
-
-        {% extends "base.html" %}
-        {% block title %}Contact Us{% endblock %}
-
-        {% block content %}
-        <h1>Contact Us</h1>
-        <p>If you have any questions or inquiries, feel free to reach out to us at:</p>
+        {% block content %}{% endblock %}
     </body>
 </html>
