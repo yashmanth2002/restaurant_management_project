@@ -4,22 +4,12 @@
         <title>Contact Us</title>
     </head>
     <body>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Send</button>
-        </form>
-
-        {% if form.errors %}
-        <div class="form-errors"
-        <ul>
-            {% for field in form %}
-            {% for error in field.errors %}
-            <li><strong>{{ field.label }}:</strong>{{ error }}</li>
-            {% endfor %}
-            {% endfor %}
-        </ul>
+        {% if messages %}
+        {% for message in messages %}
+        <div style="padding:10px; background-color: #d4edda; color: #155724; border-radius: 5px; margin-bottom: 10px">
+            {{ message }}
         </div>
+        {% endfor %}
         {% endif %}
     </body>
 </html>
