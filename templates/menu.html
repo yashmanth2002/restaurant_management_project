@@ -28,6 +28,32 @@
             {% empty %}
             <li>No matching menu items found.</li>
             {% endfor %}
+
+            {% extends 'base.html' %}
+            {% block content %}
+
+            <h1>Our Menu</h1>
+            <form method="get" action="{% url 'menu' %}">
+                <input type="text" name="q" placeholder="Search menu items ..." value="{{ query }}">
+                <button type="submit">Search</button>
+            </form>
+
+            <hr>
+
+            <div class="menu-container">
+                {% for item in items %}
+                <div class="menu-item">
+                    <h3>{{ item.name }}</h3>
+                    <p class="price">${{ item.price }}</p>
+                    {% if item.description %}
+                    <p class="description">{{ item.description }}</p>
+                    {% endif %}
+                </div>
+                {% empty %}
+                <p>No matching menu items found.</p>
+                {% endfor %}
+            </div>
+            {% endblock %}
         </ul>
         {% endblock %}
     </body>
