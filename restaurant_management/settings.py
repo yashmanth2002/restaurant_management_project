@@ -201,3 +201,19 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'youremail@example.com'
 EMAIL_HOST_PASSWORD = 'yourpassword'
+
+
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [BASE_DIR / "templates"],
+    'APP_DIRS': True
+    'OPTIONS': {
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.message',
+            'your_app_name.context_processors.current_year',
+        ]
+    }
+}]
