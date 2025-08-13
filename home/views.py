@@ -17,6 +17,8 @@ from django.contrib import messages
 from .forms import SubscriberForm
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
 
 
 
@@ -98,3 +100,7 @@ def home(request):
 
 def reservations(request):
     return render(request, 'reservations.html')
+
+
+def our_story(request):
+    return render(request, 'our_story.html')
