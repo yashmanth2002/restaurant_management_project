@@ -8,7 +8,8 @@ from django.urls import path
 from .views import contact_view, thank_you_view
 from django.urls import path
 from . import views
-
+from django.urls import path
+from . import views
 
 
 
@@ -25,5 +26,6 @@ urlpatterns = [
     path('contact/thank-you/', thank_you_view, name='thank_you')
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     path('about/', views.about, name='about')
+    path('', views.homepage, name='home'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
