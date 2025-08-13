@@ -10,6 +10,8 @@ from django.shortcuts import render, request
 from .forms import ContactForm
 from .models import OpeningHours
 from .django.shortcuts import render
+from .django.shortcuts import render
+from django.contrib import messages
 
 
 
@@ -58,3 +60,13 @@ def homepage_view(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        email =request.POST.get("email")
+        message_text = request.POST.get("message")
+
+        messages.success(request, "Thank you, your message has been sent!")
+        return redirect('contact')
+    return render(request, 'contact.html')
