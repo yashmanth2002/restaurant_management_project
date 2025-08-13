@@ -4,6 +4,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db import models
 from django.db import models
+from django.shortcuts import render
+from .models import MenuItem
+
 
 # Create your models here.
 class Contact(models.Model):
@@ -95,3 +98,19 @@ class RestaurantInfo(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+
+def menu(request):
+    query = request.GET.get('q', '')
+    if query:
+        items = MenuItem.objects.filter(name__icointains=query)
+    else:
+        items = MenuItem.objects.all()
+
+    context = {
+        'items': item,
+        'query': query
+    }
+    return render(request, 'menu.html', context)
