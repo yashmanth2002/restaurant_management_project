@@ -9,6 +9,7 @@ from .serializers import AboutUsSerializer
 from django.shortcuts import render, request
 from .forms import ContactForm
 from .models import OpeningHours
+from .django.shortcuts import render
 
 
 
@@ -54,3 +55,6 @@ def contact_view(request):
 def homepage_view(request):
     hours = OpeningHours.objects.all()
     return render(request, 'home.html', {'opening_hours': hours})
+
+def about(request):
+    return render(request, 'about.html')
