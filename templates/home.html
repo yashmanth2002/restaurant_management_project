@@ -42,6 +42,17 @@
                 <a href="{% url 'reservations' %}" class="btn btn-primary btn-lg">
                     Make a Reservation
                 </a>
+                {% extends 'base.html' %}
+
+                {% block content %}
+                <div class="container mt-5 text-center">
+                    <h1>Welcome to Flavors & Feast</h1>
+                    <p class="lead">Delicious meals, unforgettable experiences.</p>
+
+                    <div class="search-bar mt-4">
+                        <input type="text" id="searchInput" placeholder="Search our menu..." class="form-control d inline-block" style="width: 300px;">
+                        
+
             </div>
     </body>
 </html>
