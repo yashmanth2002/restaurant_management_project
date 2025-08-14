@@ -21,6 +21,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
+from django.shortcuts import render
 
 
 
@@ -141,4 +142,7 @@ def privacy_policy(request):
 
 def gallery(request):
     return render(request, 'gallery.html')
+
+def custom_permission_denied_view(request, exception=None):
+    return render(request, 'errors/403.html', status=403)
     
