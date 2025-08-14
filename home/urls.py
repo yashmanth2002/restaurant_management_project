@@ -38,6 +38,7 @@ urlpatterns = [
     path('reservations/', views.reservations, name='reservations')
     path('menu/', views.menu, name='menu')
     path('reservations/', views.reservations, name='reservations')
+    path('privacy-policy/', views.privacy-policy, name="privacy-policy")
 
 
 
