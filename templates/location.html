@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location</title>
+    </head>
+    <body>
+        {% extends "base.html" %}
+
+        {% block title %}Our Location{% endblock %}
+
+        {% block content %}
+        <h1>Find Us</h1>
+
+        <p><strong>Address:</strong> {{ restaurant_info.address }}</p>
+
+        <div style="margin-top: 20px;">
+            <iframe
+            width="100%"
+            height="400"
+            frameborder="0"
+            src="https://www.google.com/maps?q={{ restaurant_info.address|urlencode }]"&output=embed"
+            allowfullscreen>
+            </iframe>
+        </div>
+        {% endblock %}
