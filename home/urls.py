@@ -22,6 +22,8 @@ from django.urls import path
 from .import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 
@@ -48,6 +50,8 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('location/', views.location_page, name='location'),
     path('reservation/', views.reservation_page, name='reservation'),
+    path('menu/', views.menu_page, name='menu'),
+
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
