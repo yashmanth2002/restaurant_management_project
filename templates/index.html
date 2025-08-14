@@ -12,5 +12,16 @@
             <li>No menu items available.</li>
             {% endfor %}
         </ul>
+        <section style="text-align: center; padding:40px; background-color: #f9f9f9; margin-top: 30px; border-radius: 8px">
+            <h2>Reserve Your Table</h2>
+            <p>
+                Plan ahead and enjoy a seamless dining experience!
+                Use our easy-to-use reservation system to book your table in just a few clicks.
+                </p>
+                <a href="{% url 'reservation' %}"
+                style="display: inline-block; padding: 12px 24px; background-color: #d9534f; color: white; font-size: 18px; border-radius: 5px; text-decoration: none; margin-top: 15px;">
+                Make a Reservation
+                </a>
+        </section>
     </body>
 </html>
