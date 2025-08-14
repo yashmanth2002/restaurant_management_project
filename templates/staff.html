@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Staff</title>
+    </head>
+    <body>
+        {% extends 'base.html' %}
+
+        {% block content %}
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Meet Our Team</h1>
+            <p class="text-center mb-5">
+                Our staff is the heart of Flavors & Feast, dedicated to making your dining experience unforegttable.
+            </p>
+
+            <div class="row">
+
+                <div class="col-md-4 text-center mb-4">
+                    <img src="https://via.placeholder.com/200" alt="Chef John" class="rounded-circle mb-3">
+                    <h4>Chef John Doe</h4>
+                    <p>Head Chef with over 20 years of culinary experience, specializing in traditional and fusion cuisine.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 text-center mb-4">
+                        <img src="https://via.placeholder.com/200" alt="Manager Jane" class="rounded-circle mb-3">
+                        <h4>Jane Smith</h4>
+                        <p>Restaurant Manager ensuring everything runs smoothly, from the kitchen to your table.</p>
+                    </div>
+
+                <div class="col-md-4 text-center mb-4">
+                    <img src="https://viva.placeholder.com/200" alt="Waiter Mike" class="rounded-circle mb-3">
+                    <h4>Mike Johnson</h4>
+                    <p> Friendly Waiter who knows the menu inside out and ensures every guest leaves with a smile.</p>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        </body>
+</html>
