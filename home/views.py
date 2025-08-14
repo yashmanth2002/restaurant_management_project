@@ -24,6 +24,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.shortcuts import render
 from .models import RestaurantInfo
+from django.shortcuts import render
 
 
 
@@ -152,3 +153,6 @@ def custom_permission_denied_view(request, exception=None):
 def index(request):
     restaurant_info = RestaurantInfo.objects.first()
     return render(request, 'home/index.html', {"restaurant_info": restaurant_info})
+
+def reservation_page(request):
+    return render(request, 'home/reservation.html')
