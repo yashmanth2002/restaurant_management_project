@@ -138,3 +138,7 @@ def reservations(request):
 
 def privacy_policy(request):
     return render(request, 'privacy.html')
+
+def gallery(request):
+    return render(request, 'gallery.html')
+    
