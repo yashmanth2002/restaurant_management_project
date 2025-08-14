@@ -11,5 +11,26 @@
         </div>
         {% endfor %}
         {% endif %}
+        {% extends 'base.html' %}
+        {% block content %}
+
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Contact Us</h1>
+
+            <section>
+                <p><strong>Email:</strong>contact@flavourandfeast.com</p>
+                <p><strong>Phone:</strong>+ 91 98765 43210</p>
+                <p><stong>Address:</stong> 123 Main Street, Hyderabad, India</p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 class="mb-3">Opening Hours</h2>
+                <p><strong>Monday - Friday:</strong>11:00 AM - 9:00 PM</p>
+                <p><strong>Saturday - Sunday:</strong>10:00 AM - 10:00 PM</p>
+            </section>
+        </div>
+        {% endblock %}
     </body>
 </html>
