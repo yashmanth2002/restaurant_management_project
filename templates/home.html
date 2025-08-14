@@ -54,5 +54,17 @@
                         
 
             </div>
+            <nav class="navbar">
+                <div class="container">
+                    <ul class="nav-links">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'menu' %}">Menu</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+            {% block content %}
+            {% endblock %}
     </body>
 </html>
