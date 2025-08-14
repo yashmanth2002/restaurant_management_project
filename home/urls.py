@@ -18,6 +18,9 @@ from django.urls import path
 from . import views
 from django.conf.urls import handler403
 from your_app import views
+from django.urls import path
+from .import views
+
 
 
 
@@ -41,6 +44,7 @@ urlpatterns = [
     path('reservations/', views.reservations, name='reservations')
     path('privacy-policy/', views.privacy-policy, name="privacy-policy")
     path('gallery/', views.gallery, name='gallery'),
+    path('location/', views.location_page, name='location'),
 
 
 
