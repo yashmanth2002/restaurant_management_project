@@ -135,3 +135,6 @@ return render(request, 'contact.html')
 
 def reservations(request):
     return render(request, 'reservations.html')
+
+def privacy_policy(request):
+    return render(request, 'privacy.html')
