@@ -24,6 +24,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 
@@ -51,7 +53,10 @@ urlpatterns = [
     path('location/', views.location_page, name='location'),
     path('reservation/', views.reservation_page, name='reservation'),
     path('menu/', views.menu_page, name='menu'),
-
+    path('', views.home, name='home')
+    path('menu/', views.menu,name='menu')
+    path('about/', views.about, name='about')
+    path('contact/', views.contact, name='contact')
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
