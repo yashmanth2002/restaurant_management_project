@@ -16,7 +16,8 @@ from django.urls import path
 from .import views
 from django.urls import path
 from . import views
-
+from django.conf.urls import handler403
+from your_app import views
 
 
 
@@ -44,3 +45,5 @@ urlpatterns = [
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler403 = view.custom_permission_denied_view
