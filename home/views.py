@@ -25,6 +25,8 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .models import RestaurantInfo
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import MenuItem
 
 
 
@@ -156,3 +158,16 @@ def index(request):
 
 def reservation_page(request):
     return render(request, 'home/reservation.html')
+
+
+def menu_page(request):
+    query = request.GET.get('q','')
+    if query:
+        items = MenuItem.objects.filter(name___icontains=query)
+    else:
+        items = MenuItem.objects.all()
+
+    return render(request, 'home/menu.html', {
+        'items': items,
+        'query': query
+    })
