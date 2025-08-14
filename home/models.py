@@ -7,7 +7,7 @@ from django.db import models
 from django.shortcuts import render
 from .models import MenuItem
 from django.db import models
-
+from django.db import models
 
 
 
@@ -125,3 +125,10 @@ def menu(request):
         'query': query
     }
     return render(request, 'menu.html', context)
+
+class RestaurantInfo(models.Model):
+    name = models.CharField*(max_length=100, default="Our Restaurant")
+    address = models.TextField()
+
+    def __str__(self):
+        return self.name
