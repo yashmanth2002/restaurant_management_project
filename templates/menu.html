@@ -57,4 +57,27 @@
         </ul>
         {% endblock %}
     </body>
+    {% extends "base.html" %}
+
+    {% block title %}Our Menu{% endblock %}
+
+    {% block content %}
+    <h1>Our Menu</h1>
+
+    <form method="get" action="{% url 'menu' %}" style="margin-bottom: 20px;">
+        <input type="text" name="q" value="{{ query }}" placeholder="Search menu items..."
+        style="padding: 8px; width: 250px;">
+        <button type="submit" style="padding: 8px 12px;">Search</button>
+    </form>
+
+    {% if items %}
+    <ul>
+        {% for item in items %}
+        <li>{{ item.name }} - {{ item.price }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No items found.</p>
+    {% endif %}
+    {% endblock %}
 </html>
