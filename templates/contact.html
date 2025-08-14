@@ -32,6 +32,19 @@
             </section>
         </div>
         {% endblock %}
+
+        {% extends 'base.html' %}
+
+        {% block content %}
         
+        <h1>Contact Us</h1>
+
+        <p>
+            Email us at:
+            <a href="mailto:{{ restaurant_info.email }}">
+                {{ restaurant_info.email }}
+            </a>
+        </p>
+        {% endblock %}
     </body>
 </html>
