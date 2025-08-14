@@ -11,5 +11,32 @@
             <img src="{{ about.image.url }}" alt="Our Restaurant" class="restaurant-image">
             {% endif %}
         </div>
+        {% extends 'base.html' %}
+        <div class="container mt-5">
+            <h1 class="tect-center mb-4">About Us></h1>
+
+            <section class="mb-5">
+                <h2 class="mb-3">Our Story</h2>
+                <p>
+                    Established in 2010.<strong> Flavours and Feast</strong> began as a small family-run eatery 
+                    serving traditional recipies passed down for generations . Over the years, our love for food
+                    and commitment to quality transformed us into a favorite destination for locals and tourists alike.
+                    From Our humble beginnings to our current specious dinning hall, Our journey is one of passion,
+                    dedication, and a love for bringing people togrther through food.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="mb-3">Why Choose Us?</h2>
+                <ul>
+                    <li>Authentic recipies made from scratch</li>
+                    <li>Locally sourced, fresh ingredients</li>
+                    <li>Friendly and attentive staff</li>
+                    <li>A cozy ambience perfect for family gatherings or romantic dinners</li>
+                </ul>
+            </section>
+        </div>
+        {% endblock %}
+
     </body>
 </html>
