@@ -22,6 +22,8 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import RestaurantInfo
 
 
 
@@ -146,3 +148,7 @@ def gallery(request):
 def custom_permission_denied_view(request, exception=None):
     return render(request, 'errors/403.html', status=403)
     
+
+def index(request):
+    restaurant_info = RestaurantInfo.objects.first()
+    return render(request, 'home/index.html', {"restaurant_info": restaurant_info})
