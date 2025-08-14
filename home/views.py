@@ -132,3 +132,6 @@ def contact(request):
     return render(request, 'contact_sucess.html', {'name': name})
 
 return render(request, 'contact.html')
+
+def reservations(request):
+    return render(request, 'reservations.html')
