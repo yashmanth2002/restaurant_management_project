@@ -35,6 +35,8 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.shortcuts import render
 from . models import MenuItem
+from django.shortcuts import render, redirect, get_object_or_404
+from . models import MenuItem
 
 
 
@@ -203,3 +205,21 @@ def place_order(request):
 def menu(request):
     items = MenuItem.objects.all()
     return render(request, 'menu.html', {'items': items})
+
+def add_to_cart(request, item_id):
+    item = get_object_or_404(MenuItem, id=item_id)
+    cart = request.session.get('cart', {})
+
+if str(item_id) in cart:
+    cart[str(item_id)]['quantity'] += 1
+
+else:
+    cart[str(item_id)] = {
+        'name': item.name,
+        'price': float(item.price),
+        'quantity': 1
+    }
+
+    request.session['cart'] = cart
+    request.session.modified = True
+    return redirect('menu')
