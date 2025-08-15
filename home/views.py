@@ -30,6 +30,7 @@ from .models import MenuItem
 from django.shortcuts import render
 from .models import RestaurantInfo
 from django.shortcuts import render
+from django.shortcuts import render
 
 
 
@@ -183,3 +184,6 @@ def home(request):
 
 def careers(request):
     return render(request, 'careers.html')
+
+def sitemap(request):
+    return render(request, 'sitemap.html')
