@@ -38,6 +38,8 @@ from . models import MenuItem
 from django.shortcuts import render, redirect, get_object_or_404
 from . models import MenuItem
 from django.shortcuts import render
+from django.shortcuts import render
+from . models import Restaurant
 
 
 
@@ -246,3 +248,7 @@ def view_cart(request):
         'cart': cart,
         'total': total
     })
+
+def home(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, 'home.html', {'restaurant': restaurant})
