@@ -40,6 +40,7 @@ from . models import MenuItem
 from django.shortcuts import render
 from django.shortcuts import render
 from . models import Restaurant
+from django.shortcuts import render
 
 
 
@@ -252,3 +253,6 @@ def view_cart(request):
 def home(request):
     restaurant = Restaurant.objects.first()
     return render(request, 'home.html', {'restaurant': restaurant})
+
+def reservations(request):
+    return render(request, 'reservations.html')
