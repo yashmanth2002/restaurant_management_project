@@ -32,7 +32,7 @@ from .models import RestaurantInfo
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
-
+from django.shortcuts import redirect
 
 
 
@@ -191,3 +191,9 @@ def sitemap(request):
 
 def thank_you(request):
     return render(request, 'thank_you.html')
+
+def place_order(request):
+    if request.method =='POST':
+        return redirect('thank_you')
+
+    return render(request, 'order_form.html')
