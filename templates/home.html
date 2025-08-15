@@ -66,5 +66,11 @@
             </nav>
             {% block content %}
             {% endblock %}
+            <h2>Subscribe to Our Newsletter</h2>
+            <form method="post" action="#">
+                {% csrf_token %}
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
     </body>
 </html>
