@@ -28,6 +28,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 
@@ -61,6 +63,9 @@ urlpatterns = [
     path('contact/', views.contact, name='contact')
     path('menu/', views.menu, name='menu'),
     path('add-to-cart/<int:item_id>/'), views.add_to_cart, name='add_to_cart'),
+    path('menu/', views.menu, name='menu'),
+    path('add-to-cart/<int:item_id', views.add_to_cart, name='add_to_cart'),
+    path('cart/', views.view_cart, name='view_port'),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
