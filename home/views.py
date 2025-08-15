@@ -31,6 +31,7 @@ from django.shortcuts import render
 from .models import RestaurantInfo
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
 
 
 
@@ -187,3 +188,6 @@ def careers(request):
 
 def sitemap(request):
     return render(request, 'sitemap.html')
+
+def thank_you(request):
+    return render(request, 'thank_you.html')
