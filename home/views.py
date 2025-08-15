@@ -33,6 +33,8 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.shortcuts import render
+from . models import MenuItem
 
 
 
@@ -197,3 +199,7 @@ def place_order(request):
         return redirect('thank_you')
 
     return render(request, 'order_form.html')
+
+def menu(request):
+    items = MenuItem.objects.all()
+    return render(request, 'menu.html', {'items': items})
