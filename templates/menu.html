@@ -56,7 +56,6 @@
             {% endblock %}
         </ul>
         {% endblock %}
-    </body>
     {% extends "base.html" %}
 
     {% block title %}Our Menu{% endblock %}
@@ -80,5 +79,19 @@
     <p>No items found.</p>
     {% endif %}
     {% endblock %}
+    <h1>Our Menu</h1>
+    <p><strong>Cart Total:</strong> {{ cart.total}}</p>
 
+    <ul>
+        <li>
+            <strong>{{ item.name }}</strong> - {{ item.price }}
+            <p>{{ item.description }}</p>
+            <form action="{% url 'add_to_cart' item.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Add to Cart</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    </body>
 </html>
