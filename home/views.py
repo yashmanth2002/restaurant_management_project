@@ -29,6 +29,7 @@ from django.shortcuts import render
 from .models import MenuItem
 from django.shortcuts import render
 from .models import RestaurantInfo
+from django.shortcuts import render
 
 
 
@@ -177,3 +178,8 @@ def menu_page(request):
 def home(request):
     info = RestaurantInfo.objects.first()
     return render(request, 'home/index.html', {'restaurant_info': info})
+
+
+
+def careers(request):
+    return render(request, 'careers.html')
