@@ -75,5 +75,13 @@
             <h1>Welcome to {{ restaurant.name }}</h1>
             <p>{{ restaurant.description }}</p>
             <p><strong>Address:</strong> {{ restaurant.address }}</p>
+            <section class="online-order-banner">
+                <img src="{% static 'images/online-order-banner.jpg %}" alt="Order Online Banner">
+                <div class="banner-text">
+                    <h2>Order Your Favorites Online!</h2>
+                    <p>Fast, Fresh, and delivered to you door.</p>
+                    <a href="/menu/" class="banner-btn">Start Ordering</a>
+                </div>
+            </section>
     </body>
 </html>
