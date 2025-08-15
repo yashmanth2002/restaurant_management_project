@@ -37,7 +37,7 @@ from django.shortcuts import render
 from . models import MenuItem
 from django.shortcuts import render, redirect, get_object_or_404
 from . models import MenuItem
-
+from django.shortcuts import render
 
 
 
@@ -235,4 +235,14 @@ def menu(request):
     return render(request, 'menu.html', {
         'items': items,
         'cart_total': total
+    })
+
+
+def view_cart(request):
+    cart = request.session.get('cart', {})
+    total = sum(item['price'] * item['quantity'] for item in cart.values())
+
+    return render(request, 'cart.html', {
+        'cart': cart,
+        'total': total
     })
