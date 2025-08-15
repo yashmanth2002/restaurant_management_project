@@ -8,6 +8,7 @@ from django.shortcuts import render
 from .models import MenuItem
 from django.db import models
 from django.db import models
+from django.db import models
 
 
 
@@ -129,6 +130,14 @@ def menu(request):
 class RestaurantInfo(models.Model):
     name = models.CharField*(max_length=100, default="Our Restaurant")
     address = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class MenuItem(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
         return self.name
