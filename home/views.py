@@ -40,6 +40,7 @@ from . models import MenuItem
 
 
 
+
 # Create your views here.
 def contact_us_view(request):
     form = ContactForm(request.POST or None)
@@ -223,3 +224,15 @@ else:
     request.session['cart'] = cart
     request.session.modified = True
     return redirect('menu')
+
+
+def menu(request):
+    item = MenuItem.objects.all()
+    
+    cart = request.session.get('cart', {})
+    total = sum(item['price'] * item['quantity'] for item in cart.values())
+
+    return render(request, 'menu.html', {
+        'items': items,
+        'cart_total': total
+    })
