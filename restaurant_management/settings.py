@@ -227,3 +227,14 @@ EMAIL_HOST_PASSWORD = 'your_password'
 DEFAULT_FROM_EMAIL = 'Your Restaurant <your_email@example.com>'
 
 RESTAURANT_ADDRESS = "123 Main Street, Hyderabad, Telangana 500001"
+
+TEMPLATES = [
+    {
+        'OPTIONS': {
+            'context-processors': [
+
+                'myapp.context_processors.restaurant_address'
+            ],
+        },
+    },
+]
