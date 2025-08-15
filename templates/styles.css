@@ -378,3 +378,18 @@
 .nav-links a:hover {
     color: #ffcc00;
 }
+
+#menu {
+    padding: 50px 20px;
+    background: #fffaf0;
+    border-top: 2px solid #eee;
+}
+
+#menu h2 {
+    color: #333;
+}
+
+#menu p {
+    font-style: italic;
+    color: #555;
+}
