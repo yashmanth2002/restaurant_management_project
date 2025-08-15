@@ -4,4 +4,28 @@
         <title>Cart</title>
     </head>
     <body>
-        <div class="cart-container">
+        <h1>Your Shopping</h1>
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            {% for key, item in cart.items %}
+            <tr>
+                <td>{{ item.name}}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price|floatformat:2|add:item.price }}</td>
+                <td>{{ item.price|floatformat:2|multiply:item.quantity }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h3>Total: {{ total|floatformat:2 }}</h3>
+        {% else %}
+        <p>Your cart is empty.</p>
+        {% endif %}
+        <p><a href="{% url 'menu' %}">Back to Menu</a></p>
+    </body>
+</html>
