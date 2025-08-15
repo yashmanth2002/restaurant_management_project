@@ -4,9 +4,16 @@
         <title>{% block title %}Our Restaurant{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
-    
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<footer style="text-align: center; padding: 20px, background-color: #f0f0f0;">
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'reservation' %}">Reservation</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+        <footer style="text-align: center; padding: 20px, background-color: #f0f0f0;">
     <p>&copy, {{ current_year }} Your Company Name. All rights reserved.</p>
 </footer>
 
