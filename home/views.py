@@ -46,6 +46,12 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from .models import Restaurant
+from django.shortcuts import render
+
+
+
+
+
 
 
 # Create your views here.
@@ -275,3 +281,6 @@ def home_view(request):
 def about_view(request):
     return render(request,"home/about.html")
 
+
+def gallery(request):
+    return render(request, 'home/gallery.html')
