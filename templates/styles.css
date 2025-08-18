@@ -476,3 +476,20 @@ nav a:active {
     border: 1px dashed #aaa;
     border-radius: 6px;
 }
+
+.cart-button {
+    display: inline-block;
+    background-color: #ff9800;
+    color: white;
+    padding: 12px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cart-button:hover {
+    background-color: #e68900;
+}
