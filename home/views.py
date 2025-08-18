@@ -41,7 +41,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from . models import Restaurant
 from django.shortcuts import render
-
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
@@ -256,3 +256,4 @@ def home(request):
 
 def reservations(request):
     return render(request, 'reservations.html')
+
