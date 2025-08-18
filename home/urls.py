@@ -44,6 +44,7 @@ from . import views
 
 
 
+
 urlpatterns = [
     path('contact/', contact_page, name='contact'),
     path('', home, name='home'),
