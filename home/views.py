@@ -50,6 +50,9 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from .models import Restaurant
+from django.shortcuts import render
+from django.core.paginator import Paginator
+from .models import MenuItem
 
 
 
@@ -295,3 +298,11 @@ def about(request):
 def home(request):
     restaurant = Restaurant.objects.first()
     return render(request, 'home/index.html', {'restaurant': restaurant})
+
+def menu(request):
+    items = MenuItem.objects.all().order_by('category', 'name')
+    paginator = Paginator(items, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'home/menu.html', {'page_obj': page_obj})
