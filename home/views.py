@@ -267,3 +267,6 @@ def home_view(request):
         'welcome_message': "Welcome to Our Restaurant! Enjoy the best food and Service."
     }
     return render(request, "home.html", context)
+
+def about_view(request):
+    return render(request,"home/about.html")
