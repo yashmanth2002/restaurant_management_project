@@ -29,5 +29,26 @@
         <p><a href="{% url 'menu' %}">Back to Menu</a></p>
         <h2>Your Shopping Cart</h2>
         <p>Cart functionality coming soon...</p>
+        <h1>Your Cart</h1>
+
+        <div class="cart-container">
+            {% if cart_items %}
+            <ul class="cart-list">
+                {% for items in cart_items %}
+                <li class="cart_item">
+                    <span class="item-name">{{ item.name }}</span>
+                    <span class="item-qty">{{ item.quantity }}</span>
+                    <span class="item-price">{{ item.price }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="cart-total">
+                <strong>Total:</strong> {{ total }}
+            </div>
+            {% else %}
+            <p>Your cart is empty.</p>
+            {% endif %}
+        </div>
     </body>
 </html>
