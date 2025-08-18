@@ -493,3 +493,19 @@ nav a:active {
 .cart-button:hover {
     background-color: #e68900;
 }
+
+.order-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #e63946;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #b91c1c;
+}
