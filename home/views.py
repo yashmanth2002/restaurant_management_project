@@ -42,6 +42,7 @@ from django.shortcuts import render
 from . models import Restaurant
 from django.shortcuts import render
 from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 
 # Create your views here.
@@ -256,4 +257,7 @@ def home(request):
 
 def reservations(request):
     return render(request, 'reservations.html')
+
+def cart_view(request):
+    return render(request, "cart.html")
 
