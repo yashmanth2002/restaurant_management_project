@@ -47,6 +47,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .models import Restaurant
 from django.shortcuts import render
+from django.shortcuts import render
 
 
 
@@ -284,3 +285,6 @@ def about_view(request):
 
 def gallery(request):
     return render(request, 'home/gallery.html')
+
+def about(request):
+    return render(request, 'home/about.html')
