@@ -100,5 +100,13 @@
                 <p>Learn more about our story, opening hours, and how to contact us.</p>
                 <a href="{% url 'about' %}">Read More</a>
             </section>
+            <h1>Welcome to {{ resturant.home }}</h1>
+
+            <section id="contact-info">
+                <h2>Visit Us</h2>
+                <p>Address: {{ resturant.address }}</p>
+                <p>Phone: {{ resturant.phone }}</p>
+                <p>Email: {{ resturant.email }}</p>
+            </section>
     </body>
 </html>
