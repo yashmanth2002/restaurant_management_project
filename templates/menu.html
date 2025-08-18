@@ -93,5 +93,30 @@
         </li>
         {% endfor %}
     </ul>
+    <h1>Our Menu</h1>
+
+    <ul>
+        {% for item in page_obj %}
+        <li>
+            <strong>{{ item.name }}</strong>({{ item.category }}) - {{ item.price }}<br>
+            <small>{{ item.description }}</small>
+        </li>
+        {% empty %}
+        <li> No items available.</li>
+        {% endfor %}
+    </ul>
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; First</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span>Page {{ Page_obj.next_page_number }} of{{ page_obj.paginator.num_pages }}</span>
+
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+    </div>
     </body>
 </html>
