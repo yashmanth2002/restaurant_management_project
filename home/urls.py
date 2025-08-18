@@ -87,6 +87,7 @@ urlpatterns = [
     path('menu/', views.menu, name='menu'),
     path('gallery/', views.gallery, name='gallery'),
     path('about/', views.about, name='about'),
+    path('cart/', view.cart, name='cart'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
