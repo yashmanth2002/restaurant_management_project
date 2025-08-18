@@ -6,6 +6,7 @@ from .models import RestaurantInfo
 from django.shortcuts import render
 from .models import RestaurantInfo
 
+
 # Create your views here.
 
 def homepage(request):
