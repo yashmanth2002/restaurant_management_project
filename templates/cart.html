@@ -50,5 +50,26 @@
             <p>Your cart is empty.</p>
             {% endif %}
         </div>
+        <h1>Your Cart</h1>
+
+        <div class="cart-container">
+            {% if cart_items %}
+            <ul class="cart-list">
+                {% for items in cart_items %}
+                <li class="cart-item">
+                    <span class="item-name">{{ item.name }}</span>
+                    <span class="item-qty">{{ item.quantity }}</span>
+                    <span class="item-price">{{ item.price|floatformat:2}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="cart-total">
+                <strong>Total:</strong> {{ total|floatformat:2 }}
+            </div>
+            {% else %}
+            <p>Your cart is empty.</p>
+            {% endif %}
+        </div>
     </body>
 </html>
