@@ -53,6 +53,7 @@ from .models import Restaurant
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import MenuItem
+from django.shortcuts import render
 
 
 
@@ -306,3 +307,15 @@ def menu(request):
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'home/menu.html', {'page_obj': page_obj})
+
+
+def cart(request):
+    cart_items = [
+        {'name': 'Margherita Pizza', 'quantity': 2, 'price': 299},
+        {"name": "Pasta Alfredo", "quantity": 1, "price": 350},
+        {"name": "Chocolate cake", "quantity": 3, "price": 150}
+    ]
+
+    total = sum(item["price"]* item["quantity"] for item in cart_items)
+
+    return render(request, "home/cart.html", {"cart_items": cart_items, "total": total})
