@@ -13,6 +13,7 @@ from django.db import models
 from django.db import models
 from django.db import models
 from django.db import models
+from django.db import models
 
 
 class RestaurantInfo(models.Model):
@@ -184,3 +185,12 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.category})"
+
+class Restaurant(model.Model):
+    name = models.CharField(max_length=100)
+    address = models.TextField()
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name
