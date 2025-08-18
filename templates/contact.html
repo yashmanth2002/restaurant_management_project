@@ -46,5 +46,10 @@
             </a>
         </p>
         {% endblock %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send</button>
+        </form>
     </body>
 </html>
