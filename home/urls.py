@@ -34,6 +34,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 
@@ -72,6 +74,8 @@ urlpatterns = [
     path('cart/', views.view_cart, name='view_port'),
     path('', views.home, name='home'),
     path('reservations/', views.reservations, name='reservations'),
+    path('', views.home_view, name='home')
+    path('cart/', views.cart_view, name='cart')
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
