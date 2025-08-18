@@ -48,6 +48,8 @@ from django.shortcuts import render
 from .models import Restaurant
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import Restaurant
 
 
 
@@ -288,3 +290,8 @@ def gallery(request):
 
 def about(request):
     return render(request, 'home/about.html')
+
+
+def home(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, 'home/index.html', {'restaurant': restaurant})
