@@ -108,5 +108,10 @@
                 <p>Phone: {{ resturant.phone }}</p>
                 <p>Email: {{ resturant.email }}</p>
             </section>
+            <h1> Welcome to {{ resturant.name }}</h1>
+
+            <section id="order-online">
+                <a href="{% url 'menu' %}" class="order-btn">Order Online</a>
+            </section>
     </body>
 </html>
