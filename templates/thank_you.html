@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Thank You</title>
-    </head>
-    <body>
-        <h1>Thank You for Your Order!</h1>
-        <p>Your order has been sucessfully placed. We'll contact you soon with the details.</p>
-        <a href="{% url 'home' %}">Return to Home</a>
-    </body>
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        . message {
+            font-size: 20px;
+            color: #333;
+            padding: 20px;
+            background: #f0f8ff;
+            border: 1px solid #ddd;
+            border-radius: 8pz;
+            display: inline-block;
+        }
+        </style>
+        </head>
+        <body>
+            <div class="message">
+                Thank you for your message! we will get back to you soon.
+            </div>
+        </body>
 </html>
