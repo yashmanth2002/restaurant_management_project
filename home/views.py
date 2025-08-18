@@ -44,6 +44,8 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import Restaurant
 
 
 # Create your views here.
@@ -264,9 +266,12 @@ def cart_view(request):
 
 def home_view(request):
     context = {
+        restaurant = Restaurant.objects.first()
         'welcome_message': "Welcome to Our Restaurant! Enjoy the best food and Service."
+        "restaurant_address": restaurant.address if restaurant else "Address coming soon..."
     }
     return render(request, "home.html", context)
 
 def about_view(request):
     return render(request,"home/about.html")
+
