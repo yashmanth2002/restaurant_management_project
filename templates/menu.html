@@ -17,11 +17,62 @@
             .view-cart-btn:hover {
             background-color: #45a049;
             }
+
+            .menu-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            }
+
+            .menu-item h3 {
+            margin: 0;
+            }
+
+            .quantity-input {
+            width: 60px;
+            padding: 5px;
+            margin-right: 10px;
+            }
+
+            .add-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            }
+
+            .add-btn:hover {
+            background-color: #0056b3;
+            }
             </style>
     </head>
     <body>
         <h1>Our Menu</h1>
         <a href="{% url 'cart' %}" class="view-cart-btn">View Cart</a>
+
+        <div class="menu-item">
+            <h3>Pizza</h3>
+            <p>Delicious cheese pizza</p>
+            <input type="number" class="quantity-input" min="1" value="1" id="pizza-qty">
+            <button class="add-btn" onclick="addToCart('Pizza', document.getElementById('pizza-qty').value)">Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <h3>Burger</h3>
+            <p>Juicy beef burger</p>
+            <input type="number" class="quantity-input" min="1" value="1" id="burger-qty">
+            <button class="add-btn" onclick="addToCart('Burger', document.getElementsByid('burger-qty').value">Add to Cart</button>
+        </div>
+
+        <script>
+            function addToCart(itemName, quantity) {
+            alert(quantity + "x" + itemName + "added to cart!")
+            }
+            </script>
+            
         {% for item in page_obj %}
         <div class="menu-item">
             <img src="{{ item.image.url }}" alt="{{ item.alt_text }}">
