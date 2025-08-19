@@ -1,75 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cart</title>
+        <title>Your Cart</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            }
+            
+            .cart-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            }
+
+            h2 {
+            text-align: center;
+            }
+            </style>
     </head>
     <body>
-        <h1>Your Shopping</h1>
-        <table border="1" cellpadding="8">
-            <tr>
-                <th>Item</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-            </tr>
-            {% for key, item in cart.items %}
-            <tr>
-                <td>{{ item.name}}</td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ item.price|floatformat:2|add:item.price }}</td>
-                <td>{{ item.price|floatformat:2|multiply:item.quantity }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-        <h3>Total: {{ total|floatformat:2 }}</h3>
-        {% else %}
-        <p>Your cart is empty.</p>
-        {% endif %}
-        <p><a href="{% url 'menu' %}">Back to Menu</a></p>
-        <h2>Your Shopping Cart</h2>
-        <p>Cart functionality coming soon...</p>
-        <h1>Your Cart</h1>
-
         <div class="cart-container">
-            {% if cart_items %}
-            <ul class="cart-list">
-                {% for items in cart_items %}
-                <li class="cart_item">
-                    <span class="item-name">{{ item.name }}</span>
-                    <span class="item-qty">{{ item.quantity }}</span>
-                    <span class="item-price">{{ item.price }}</span>
-                </li>
-                {% endfor %}
-            </ul>
-
-            <div class="cart-total">
-                <strong>Total:</strong> {{ total }}
-            </div>
-            {% else %}
-            <p>Your cart is empty.</p>
-            {% endif %}
-        </div>
-        <h1>Your Cart</h1>
-
-        <div class="cart-container">
-            {% if cart_items %}
-            <ul class="cart-list">
-                {% for items in cart_items %}
-                <li class="cart-item">
-                    <span class="item-name">{{ item.name }}</span>
-                    <span class="item-qty">{{ item.quantity }}</span>
-                    <span class="item-price">{{ item.price|floatformat:2}}</span>
-                </li>
-                {% endfor %}
-            </ul>
-
-            <div class="cart-total">
-                <strong>Total:</strong> {{ total|floatformat:2 }}
-            </div>
-            {% else %}
-            <p>Your cart is empty.</p>
-            {% endif %}
+            <h2>Your Shopping Cart</h2>
+            <p>Your cart is currently empty.</p>
         </div>
     </body>
 </html>
