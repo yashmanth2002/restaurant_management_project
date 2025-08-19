@@ -42,7 +42,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
-
+from django.urls import path
+from . import views
 
 
 
@@ -88,6 +89,7 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('about/', views.about, name='about'),
     path('cart/', view.cart, name='cart'),
+    path('cart/', views.cart, name='cart'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
