@@ -54,6 +54,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import MenuItem
 from django.shortcuts import render
+from djanggo.shortcuts import render
 
 
 
@@ -319,3 +320,6 @@ def cart(request):
     total = sum(item["price"]* item["quantity"] for item in cart_items)
 
     return render(request, "home/cart.html", {"cart_items": cart_items, "total": total})
+
+def cart(request):
+    return render(request, 'cart.html')
