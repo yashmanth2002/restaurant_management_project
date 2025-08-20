@@ -4,6 +4,22 @@
         <title>{% block title %}Our Restaurant{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <style>
+            footer {
+            background-color: #f2f2f2;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            }
+            footer a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: 500;
+            }
+            footer a: hover {
+            text-decoration: underline;
+            }
     </head>
     <body>
         <nav>
@@ -44,13 +60,6 @@
 <footer class="site-footer">
     <p>Powered by Django | {{ current_year }}Our Restaurant</p>
 </footer>
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2025 Your Restaurant. All Rights Reserved.</p>
-        <p>
-            <a href="{% url 'privacy_policy' %}" class="footer.link">Privacy Policy</a>
-        </p>
-    </div>
-</footer>
+{% block content %}{}
 </body>
 </html>
