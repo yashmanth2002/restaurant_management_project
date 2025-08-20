@@ -64,6 +64,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .models import ContactInfo
 from django.shortcuts import render
+from django.shortcuts import render
 
 
 
@@ -350,3 +351,6 @@ def contact(request):
 
 def privacy_policy(request):
     return render(request, 'privacy_policy.html')
+
+def locations(request):
+    return render(request, 'locations.html')
