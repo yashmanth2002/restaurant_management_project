@@ -1,38 +1,48 @@
-<!DOCTYPE html>>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Privacy</title>
+        <title>Privacy Policy</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            color: #333;
+            }
+
+            h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            }
+
+            section {
+            margin-bottom: 20px;
+            }
+            </style>
     </head>
     <body>
-        {% extends 'base.html' %}
+        <h1>Privacy Policy</h1>
 
-        {% block content %}
-        <div class="container mt-5">
-            <h1 class="mb-4">Privacy Policy</h1>
-            <p>
-                This is our privacy policy. The content here explains how we handle and protect your personal Information.
-                We value your trust and are committed to safeguarding your privacy
-            </p>
-            <p>
-                This is placeholder text - in the future, this section will include detailed information about 
-                data collection, usage, and security measures.
-            </p>
-        </div>
-        {% endblock %}
-        <p id="last-updated"></p>
+        <section>
+            <h2>1. Introduction</h2>
+            <p>This is a placeholder Privacy Policy. Replace this text with your actual privacy practices.</p>
+        </section>
 
-        <script>
-            const today = new Date();
-            const formattedDate = today.tolocaleDateString("en-us", {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-            });
+        <section>
+            <h2>2. Information We collect</h2>
+            <p>Details about what kind of information is collected will go here.</p>
+        </section>
 
-            document.getElementsById("last-updated").textContent = "Last Updated: " + formattedDate;
-            </script>
-            <h1>Privacy Policy</h1>
-            <p>Welcome to our Privacy Policy Page...</p>
-            <p><em>Last Updated: {{ last_updated }}</em></p>
+        <section>
+            <h2>3. How We Use Information</h2>
+            <p>Placeholder text about how customer information will be used.</p>
+        </section>
+
+        <section>
+            <h2>4. Contact Us</h2>
+            <p>If you have any questions, please contact us at support@restaurant.com.</p>
+        </section>
+
+        <p><em>Last Updated: August 20, 2025</em></p>
     </body>
 </html>
