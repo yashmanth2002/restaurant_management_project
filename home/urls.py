@@ -50,6 +50,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 urlpatterns = [
@@ -97,7 +99,8 @@ urlpatterns = [
     path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
     path("privacy/", views.privacy_policy, name="privacy_policy")
     path('privacy-policy/', views.privacy_policy, name="privacy_policy"),
-    
+    path('locations/', views.locations, name='location'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler403 = view.custom_permission_denied_view
