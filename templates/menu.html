@@ -187,5 +187,22 @@
         <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
         {% endif %}
     </div>
+    <h1>Our Menu</h1>
+
+    <ul>
+        {% for item in menu_items %}
+        <li>
+            <h3>{{ item.name }} - ${{ item.price }}</h3>
+            <p>{{ item.description }}</p>
+            <p>
+                {% if item.is_available %}
+                <span style="color: green; font-weight: bold;">Available</span>
+                {% else %}
+                <span style="color: red; font-weight: bold;">Not Available</span>
+                {% endif %}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
     </body>
 </html>
