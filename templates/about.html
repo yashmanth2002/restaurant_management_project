@@ -79,5 +79,15 @@
                 Email: info@restaurant.com
             </p>
         </section>
+        {% extends 'base.html' %}
+
+        {% block content %}
+        <h1>About Us</h1>
+        <p>
+            Welcome to our restaurant! We are dedicated to serving delocious food and providing 
+            a great dining experience.
+        </p>
+        <img src="https://via.placeholder.com/800*400" alt="About Our Restaurant" style="width:100%; max-width:800px; border-radius:10px; margin-top:20px">
+        {% endblock %}
     </body>
 </html>
