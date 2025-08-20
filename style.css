@@ -18,3 +18,21 @@ h1, h2, h3{
     max-width: 800px;
     margin: auto;
 }
+
+.footer {
+    background-color: #222;
+    color: #ddd;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-link {
+    color: #00bcd4;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #fff;
+}
