@@ -61,6 +61,8 @@ from django.shortcuts import render
 from django.conf import settings
 from datetime import datetime
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import ContactInfo
 
 
 
@@ -340,3 +342,7 @@ def privacy_policy(request):
 
 def privacy_policy(request):
     return render(request, "privacy.html")
+
+def contact(request):
+    contact_info = ContactInfo.objects.first()
+    return render(request, "contact.html", {"contact_info": contact_info})
