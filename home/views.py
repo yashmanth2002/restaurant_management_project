@@ -54,8 +54,12 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import MenuItem
 from django.shortcuts import render
-from djanggo.shortcuts import render
-
+from django.shortcuts import render
+from django.shortcuts import render
+import os
+from django.shortcuts import render
+from django.conf import settings
+from datetime import datetime
 
 
 
@@ -323,3 +327,12 @@ def cart(request):
 
 def cart(request):
     return render(request, 'cart.html')
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
+
+def privacy_policy(request):
+    file_path = os.path.join(settings.BASE_DIR, 'templates', 'privacy.html')
+    last_modified = os.path.getmtime(file_path)
+    last_updated = datetime.fromtimestamp(last_modified).strftime("%B %d, %Y")
+    return render(request, "privacy.html", {"last_updated": last_updated})
