@@ -60,6 +60,7 @@ import os
 from django.shortcuts import render
 from django.conf import settings
 from datetime import datetime
+from django.shortcuts import render
 
 
 
@@ -336,3 +337,6 @@ def privacy_policy(request):
     last_modified = os.path.getmtime(file_path)
     last_updated = datetime.fromtimestamp(last_modified).strftime("%B %d, %Y")
     return render(request, "privacy.html", {"last_updated": last_updated})
+
+def privacy_policy(request):
+    return render(request, "privacy.html")
