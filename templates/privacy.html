@@ -19,5 +19,17 @@
             </p>
         </div>
         {% endblock %}
+        <p id="last-updated"></p>
+
+        <script>
+            const today = new Date();
+            const formattedDate = today.tolocaleDateString("en-us", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+            });
+
+            document.getElementsById("last-updated").textContent = "Last Updated: " + formattedDate;
+            </script>
     </body>
 </html>
