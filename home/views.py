@@ -69,6 +69,19 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.utils import timezone
 from .models import MenuItem
+from django.shortcuts import render, redirect
+from .forms import NewsletterForm
+
+def homepage(request):
+    if request.method == "POST":
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+    else:
+        form = NewsletterForm()
+
+    return render(request, "home.html", {"form": form})
 
 def menu(request):
     items = MenuItem.objects.all|()
