@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ item.name }}</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 20px
+            }
+
+            h1 {
+            color: #333;
+            }
+
+            .price {
+            font-weight: bold;
+            color: green;
+            }
+
+            .description {
+            margin-top: 15px;
+            font-style: italic;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>{{ item.name }}</h1>
+        <p class="price">Price: ${{ item.price }}</p>
+        <p>Category: {{ item.category }}</p>
+        <p class="description">{{ item.description }}</p>
+        <a href="{% url 'menu' %}">Back to Menu</a>
+    </body>
+</html>
