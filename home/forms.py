@@ -1,7 +1,6 @@
 from django import forms
 from .models import Subscriber
 from django import forms
-from .models import NewsletterSubscription
 
 class SubscriberForm(forms.ModelForm):
     class Meta:
@@ -14,11 +13,7 @@ class SubscriberForm(forms.ModelForm):
             })
         }
 
-class NewsletterForm(forms.ModelForm):
-    model = NewsletterSubscription
-    fields = ['emai']
-    widgets = forms.EmailInput(attrs={ 
-        'placeholder': 'Enter your Email',
-        'class': 'form-control'
-    }),
-    
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100, required=True)
+    email = forms.EmailField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)
