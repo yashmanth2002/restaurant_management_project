@@ -65,43 +65,25 @@ from django.shortcuts import render
 from .models import ContactInfo
 from django.shortcuts import render
 from django.shortcuts import render
-from django.shortcuts import render
-from django.shortcuts import render
-from django.utils import timezone
-from .models import MenuItem
 from django.shortcuts import render, redirect
-from .forms import NewsletterForm
-from . models import RestaurantInfo
-from django.shortcuts import render
-from django.shortcuts import render
-from django.shortcuts import render
+from .forms import ContactForm
 
-def privacy_policy(request):
-    return render(request, "privacy_policy.html")
-
-def thank_you(request):
-    return render(request, 'thank_you.html')
-
-def privacy_policy(request):
-    return render(request, "privacy.html")
-def homepage(request):
-    info = RestaurantInfo.objects.first()
-
-def homepage(request):
-    if request.method == "POST":
-        form = NewsletterForm(request.POST)
+def contact_us(request):
+    if request.method =="POST":
+        form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect("home")
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            request.session['contact_email'] = email
+
+            TODO:
+            return redirect("order_page")
+
     else:
-        form = NewsletterForm()
-
-    return render(request, "home.html", {"form": form})
-
-def menu(request):
-    items = MenuItem.objects.all|()
-    last_updated = timezone.now()
-    return render(request, 'menu.html', {"menu_items": items, "last_updated": last_updated})
+        form = ContactForm()
+    return render(request, "contact.html", {"form": form})
 
 
 
@@ -391,6 +373,3 @@ def privacy_policy(request):
 
 def locations(request):
     return render(request, 'locations.html')
-
-def terms_of_service(request):
-    return render(request, "terms.html")
