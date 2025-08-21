@@ -4,67 +4,6 @@
         <title>Spice Garden - Authentic Indian Cuisine in Hyderabad</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <style>
-            .hero {
-            position: relative;
-            width: 100%;
-            height: 70vh;
-            overflow: hidden;
-            }
-
-            .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            }
-
-            .hero-text {
-            position: absolute;
-            top: 50%
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 20px 40px;
-            border-radius: 10px;
-            }
-
-            .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            }
-
-            .hero-text p {
-           font-size: 1.5rem; 
-            }
-
-            .testimonials {
-            background: #f9f9f9;
-            padding: 60px 20px;
-            text-align: center;
-            }
-
-            testimonials h2 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            }
-
-            .testimonial {
-            background: white;
-            padding: 20px;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-            font-style: italic;
-            }
-
-            .testimonial h4 {
-            margin-top: 15px;
-            font-style: normal;
-            color: #555;
-            }
-            </style>
     </head>
     <body>
         {% block content %}{% endblock %}
@@ -147,39 +86,29 @@
             <div class="homepage-actions">
                 <a href="{% url 'cart' %}" class="cart-button">View Cart</a>
             </div>
-            <div id="reviews-placeholder" style="text-align: center; margin: 40px 0; padding: 20px; border: 2px dashed #ccc; border-radius: 10px; background-color: #f9f9f9;">
-                <h2>Customer Reviews</h2>
-                <p>Reviews Coming Soon!</p>
-            </div>
-            <section class="hero">
-                <img src="/static/images/restaurant-hero.jpg"
-                alt="Delicious dishes served at our restaurant"
-                class="hero-image">
-
-                <div class="hero-text">
+            <div class="hero-section">
+                <div class="hero-content">
                     <h1>Welcome to Our Restaurant</h1>
-                    <p>Experience the taste of authentic flavors</p>
+                    <p>Delicious food, cozy ambiance, and unforgettable experiences.</p>
+                    <a href="{% url 'menu' %}" class="btn-order">Order Online</a>
+                </div>
+            </div>
+            <section class="reviews-section">
+                <div class="reviews-placeholder">
+                    <h2>Customer Reviews</h2>
+                    <p>Reviews Coming Soon!</p>
                 </div>
             </section>
-            <section class="testimonials">
-                <h2>What Our Customers Say</h2>
-                <div class="testimonial-container">
+            <h1>Welcome to [Restaurant Name]</h1>
+            <p>Experience the finest dining in [city].</p>
 
-                    <div class="testimonial">
-                        <h2>"The food was absolutely delicious and the service was top-notch.Highly recommend!"</p>
-                        <h4>- John D.</h4>
-                        </div>
-
-                        <div class="testimonial">
-                            <p>"A cozy atmosphere ith amazing flavors.I'll definitely be coming back!"</p>
-                            <h4>- Sarah M.</h4>
-                        </div>
-
-                        <div class="testimonial">
-                            <p>"Best dining experience I've had in years. Everything was perfect."</p>
-                            <h4>- Alex R.</h4>
-                        </div>
-                </div>
+            <section>
+                    <h2>Subscribe to our Newsletter</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.email }}
+                        <button type="submit">Subscribe</button>
+                    </form>
             </section>
     </body>
 </html>
