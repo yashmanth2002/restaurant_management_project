@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>[Restaurant Name] - Fine Dining in [City]</title>
+        <title>{% block title %}My Website{% endblock %}</title>
         <style>
-            header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
+            body {
+            font-family: Arial, sans-serif;
+            marigin: 0;
+            padding: 0;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+
             }
-            header h1 {
-            margin: 0;
-            font-size: 1.5em;
+            main {
+            flex: 1;
+            padding: 20px;
+
             }
-            .hours {
-            font-size: 0.9rem;
-            font-style: italic;
-            } 
+            footer {
+           background-color: #333;
+           color: white;
+           text-align: center;
+           padding: 1rem 0;
+           font-size: 0.9rem;
+            }
+            </style>
     </head>
     <body>
-    <header>
-    <h1>[Restaurant Name]</h1>
-    <div class="hours">
-    Mon-Fri: 11am - 9pm | Sat-Sun: 12pm - 10pm
-    </div>
-    </header>
+        {% block content %}{% endblock %}
 
-    {% block content %}{% endblock %}
-
-    <footer>
-    <p>&copy; {% now "Y" %} [Restaurant Name]. All rights reserved.</p>
-    </footer>
-    <footer>
-    <p>&copy; {% now "Y" %} [Restaurant Name]. All rights reserved. |
-    <a href="{% url 'terms' %}">Terms of Service</a> |
-    <a href="{% url 'privacy' %}">Privacy Policy</a>
-    </p>
-    </footer>
+        <footer>
+            &copy; {% now "Y" %}My Website.All rights reserved.
+        </footer>
+        <footer style="text-align: center; padding: 20px; background: #f2f2f2; margin-top: 40px">
+            <p>&copy; 2025 My Restaurant</p>
+            <nav>
+                <a href="{% url 'privacy_policy' %]">Privacy Policy</a>
+            </nav>
+        </footer>
     </body>
 </html>
