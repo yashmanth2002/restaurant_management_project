@@ -2,7 +2,36 @@
 <html>
     <head>
         <title>[Restaurant Name] - Fine Dining in [City]</title>
+        <style>
+            header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            }
+            header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            }
+            .hours {
+            font-size: 0.9rem;
+            font-style: italic;
+            } 
     </head>
     <body>
+    <header>
+    <h1>[Restaurant Name]</h1>
+    <div class="hours">
+    Mon-Fri: 11am - 9pm | Sat-Sun: 12pm - 10pm
+    </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+    <p>&copy; {% now "Y" %} [Restaurant Name]. All rights reserved.</p>
+    </footer>
     </body>
 </html>
