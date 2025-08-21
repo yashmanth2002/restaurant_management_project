@@ -74,6 +74,10 @@ from .forms import NewsletterForm
 from . models import RestaurantInfo
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
+def privacy_policy(request):
+    return render(request, "privacy_policy.html")
 
 def thank_you(request):
     return render(request, 'thank_you.html')
