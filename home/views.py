@@ -66,6 +66,14 @@ from .models import ContactInfo
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from django.utils import timezone
+from .models import MenuItem
+
+def menu(request):
+    items = MenuItem.objects.all|()
+    last_updated = timezone.now()
+    return render(request, 'menu.html', {"menu_items": items, "last_updated": last_updated})
 
 
 
