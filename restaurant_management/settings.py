@@ -241,3 +241,6 @@ TEMPLATES = [
 
 DEBUG = False
 ALLOWED_HOSTS = ['*']
+
+DEBUG = False
+ALLOWED_HOSTS = ["yourdomain.com", "localhost"]
