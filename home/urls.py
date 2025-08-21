@@ -55,7 +55,9 @@ from . import views
 from django.urls import path
 from home import views
 from django.urls import path
-from home import viewa
+from home import views
+from django.urls import path
+from . import views
 
 
 urlpatterns = [
@@ -106,6 +108,7 @@ urlpatterns = [
     path('locations/', views.locations, name='location'),
     path("terms/", views.terms_of_service, name="terms"),
     path("privacy/", views.privacy_policy, name="privacy"),
+    path("thank_you/", views.thank_you, name='thank_you'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
