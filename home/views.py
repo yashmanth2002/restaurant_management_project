@@ -72,7 +72,10 @@ from .models import MenuItem
 from django.shortcuts import render, redirect
 from .forms import NewsletterForm
 from . models import RestaurantInfo
+from django.shortcuts import render
 
+def privacy_policy(request):
+    return render(request, "privacy.html")
 def homepage(request):
     info = RestaurantInfo.objects.first()
 
