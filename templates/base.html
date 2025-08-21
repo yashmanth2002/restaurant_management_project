@@ -33,5 +33,11 @@
     <footer>
     <p>&copy; {% now "Y" %} [Restaurant Name]. All rights reserved.</p>
     </footer>
+    <footer>
+    <p>&copy; {% now "Y" %} [Restaurant Name]. All rights reserved. |
+    <a href="{% url 'terms' %}">Terms of Service</a> |
+    <a href="{% url 'privacy' %}">Privacy Policy</a>
+    </p>
+    </footer>
     </body>
 </html>
