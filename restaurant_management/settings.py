@@ -244,3 +244,6 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 ALLOWED_HOSTS = ["yourdomain.com", "localhost"]
+
+DEBUG = False
+ALLOWED_HOSTS = ["yourdomain.com", "localhost"]
