@@ -47,6 +47,25 @@
             .add-btn:hover {
             background-color: #0056b3;
             }
+
+            #searchBar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            }
+            ul{
+            list-style: none;
+            padding: 0;
+            }
+            li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            }
+            .hidden {
+            display: none;
+            }
             </style>
     </head>
     <body>
@@ -204,5 +223,31 @@
         </li>
         {% endfor %}
     </ul>
+    <input type="text" id="searchBar" placeholder="Search menu items...">
+
+    <ul id="menuList">
+        <li>
+            <strong>{{ item.name }}</strong>- ${{ item.price }}
+            <p>{{ item.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <script>
+
+        const searchBar = document.getElementById('searchBar');
+        const menuItems = document.querySelectorAll('#menuList li');
+
+        searchBar.addEventListener('keyup', function()) {
+        const query = this.value.toLowerCase();
+
+        menuItems/.forEach(function(item) {
+        const text = item.textContent.toLowerCase();
+        if(text.includes(query)) {
+        item.classList.remove('hidden');
+        } else {
+        item.classList.add('hidden');
+        }
+        })
+        }
     </body>
 </html>
