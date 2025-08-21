@@ -2,24 +2,55 @@
 <html>
     <head>
         <title>Location</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fafafa;
+            }
+
+            h1 {
+            text-align: center;
+            color: #333;
+            }
+            .location-list {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgbaO(0, 0, 0, 0.1);
+            }
+            .location {
+            margin-bottom: 20px;
+            }
+            .location h2 {
+            margin: 0 0 5px;
+            color: #444;
+            }
+            .location p {
+            margin: 0;
+            color: #666;
+            }
     </head>
     <body>
-        {% extends "base.html" %}
-
-        {% block title %}Our Location{% endblock %}
-
-        {% block content %}
-        <h1>Find Us</h1>
-
-        <p><strong>Address:</strong> {{ restaurant_info.address }}</p>
-
-        <div style="margin-top: 20px;">
-            <iframe
-            width="100%"
-            height="400"
-            frameborder="0"
-            src="https://www.google.com/maps?q={{ restaurant_info.address|urlencode }]"&output=embed"
-            allowfullscreen>
-            </iframe>
+        <h1>Our Locations</h1>
+        <div class="location-list">
+        <div class="location">
+        <h2>Location 1</h2>
+        <p>123 Main Street, City A</p>
+        <p>Placeholder description for this branch.</p>
         </div>
-        {% endblock %}
+        <div class="location">
+        <h2>Location 2</h2>
+        <p>456 Market Road, City B</p>
+        <p>Placeholder description for this branch.</p>
+        </div>
+        <div class="location">
+        <p>789 Central Avenue, City C</p>
+        <p>Placeholder description for this branch.</p>
+        </div>
+        </div>
+        </body>
+        </html>
