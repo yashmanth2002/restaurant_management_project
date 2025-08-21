@@ -71,6 +71,10 @@ from django.utils import timezone
 from .models import MenuItem
 from django.shortcuts import render, redirect
 from .forms import NewsletterForm
+from . models import RestaurantInfo
+
+def homepage(request):
+    info = RestaurantInfo.objects.first()
 
 def homepage(request):
     if request.method == "POST":
