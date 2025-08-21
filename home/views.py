@@ -68,6 +68,11 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.shortcuts import render
+from datetime import datetime
+from django.shortcuts import render
+
+def home(request):
+    return render(request, "home.html", {"current_year": datetime.now().year})
 
 def privacy_policy(request):
     return render(request, "privacy_policy.html")
