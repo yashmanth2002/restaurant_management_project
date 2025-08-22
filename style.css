@@ -19,52 +19,9 @@ h1, h2, h3{
     margin: auto;
 }
 
-.footer {
-    background-color: #222;
-    color: #ddd;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.footer-link {
-    color: #00bcd4;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.footer-link:hover {
-    text-decoration: underline;
-    color: #fff;
-}
-
-nav {
-    background-color: #333;
-    padding: 10px 20px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #ff6600;
-    color: #fff;
+.opening-hours {
+font-size: 14px;
+font-weight: bold;
+color: #444;
+margin-top: -10px;
 }
