@@ -56,6 +56,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 urlpatterns = [
@@ -106,6 +108,7 @@ urlpatterns = [
     path('locations/', views.locations, name='location'),
     path("privacy-policy/", views.privacy_policy, name="privacy_policy"),
     path("privacy/", views.privacy_policy, name="privacy"),
+    path("contact/", views.contact_view, name="contact"),
 
 
     
