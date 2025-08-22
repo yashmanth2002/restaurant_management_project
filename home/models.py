@@ -17,14 +17,15 @@ from django.db import models
 from django.db import models
 from django.db import models
 from django.db import models
-from django.db import models
 
-class NewsletterSubscription(models.Model):
-    email = models.EmailField(unique=True)
-    subscribed_at = models.DateTimeField(auto_now_add=True)
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.email
+        return f"Message from {self.name} ({self.email})"
 
 class RestaurantInfo(models.Model):
     name = models.CharField(max_length = 200, default="Our Restaurant")
@@ -223,12 +224,3 @@ class ContactInfo(models.Model):
 
     def __str__(self):
         return f"Contact Info ({self.phone})
-
-class MenuItem(models.Model):
-    name = models.CharField(max_length=100)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    category = models.CharField(max_length=50, default="Uncategorized")
-    description = models.TextField(blank=True, null=True)
-
-    def __str__(self):
-        return self.name
