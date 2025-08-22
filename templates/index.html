@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Spice Garden |Authentic Indian Cuisine in Hyderabad </title>
+        <title>Restaurant Menu</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f9f9f9;
+            }
 
+            header {
+            background: #007BFF;
+            padding: 15px;
+            text-align: center;
+            }
+
+            header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            }
+
+            header nav a:hover{
+            text-decoration: underline;
+            }
+
+            .search-container {
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+            }
+
+            .search-container input {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px
+            }
+
+            .search-container button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+
+            .search-container button:hover {
+            background: #0056b3;
+            }
+
+            </style>
     </head>
     <body>
+
+        <header>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/gallery">Gallery</a>
+            </nav>
+        </header>
+
+        <div class="search-container">
+            <h2>Find Your Favorite Menu Item</h2>
+            <form>
+                <input type="text" placeholder="Search menu items..." name="search" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
         <h1> Our Menu</h1>
         <ul>
             {% for item in menu_items %}
@@ -114,21 +182,5 @@
             <section id="order-online">
                 <a href="{% url 'menu' %}" class="order-btn">Order Online</a>
             </section>
-            <header>
-                <h1>Welcome to Spice Garden</h1>
-                <p><strong>Opening Hours:</strong>Mon - Fri: 11am - 9pm | Sat - Sun: 12pm - 10pm</p> 
-            </header>
-
-            <main>
-                <p>Experience the best authentic Indian cuisine in Hyderabad.</p>
-            </main>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a>|</li>
-                    <li><a href="/menu/">Menu</a></li>
-                    <li><a href="/reservations">Reservations</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                </ul>
-            </nav>
     </body>
 </html>
