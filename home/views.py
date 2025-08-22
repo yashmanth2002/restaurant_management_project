@@ -70,6 +70,10 @@ from .forms import ContactForm
 from django.shortcuts import render
 from datetime import datetime
 from django.shortcuts import render
+from django.shortcuts import render
+
+def privacy_policy(request):
+    return render(request, "privacy.html")
 
 def home(request):
     return render(request, "home.html", {"current_year": datetime.now().year})
