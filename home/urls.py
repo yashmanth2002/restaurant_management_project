@@ -68,6 +68,11 @@ from django.urls import path
 from . import views
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.urls import path
+from . import views
+
 
 handler403 = "home.views.custom_403"
 handler403 = "home.views.custom_403"
@@ -128,8 +133,11 @@ urlpatterns = [
     pth("privacy-policy/", views.privacy_policy, name="privacy_policy")
     path("submit-review/", views.submit_reviews, name="submit_review"),
     path("admin/", admin.site.urls),
-    path("", include("home.urls"))
+    path("", include("home.urls")),
+    path('', views.home, name='home'),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler403 = view.custom_permission_denied_view
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
