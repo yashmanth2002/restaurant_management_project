@@ -81,6 +81,22 @@ from .models import RestaurantReview
 from django.shortcuts import render
 from django.db.models import Avg, Q
 from .models import RestaurantReview
+from django.shortcuts import render
+from django.db.models import Avg
+from . models import RestaurantReview
+
+def home(request):
+    avg_rating = RestaurantReview.objects.aggregate(Avg("rating"))["rating_avg"]
+
+    if avg_rating is not None:
+        avg_rating = round(avg_rating, 1)
+
+        recent_reviews = RestaurantReview.objects.order_by("-created_at")[:3]
+
+        return render(request, "home/home.html", {
+            "avg_rating": avg_rating,
+            "recent_reviews": recent_reviews,
+        })
 
 def home(request):
     query = request.GET.get("q","")
