@@ -60,6 +60,10 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.contrib import admin
+from django.urls import path, include
+
+handler403 = "home.views.custom_403"
 
 
 urlpatterns = [
@@ -112,6 +116,8 @@ urlpatterns = [
     path("privacy/", views.privacy_policy, name="privacy"),
     path("contact/", views.contact_view, name="contact"),
     path("news?", views.news_list, name="news")
+    path("admin/", admin.site.urls),
+    path("", include("home.urls")),
 
 
     
