@@ -1,22 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>403</title>
+        <title>Access denied</title>
+        <style>
+            body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            margin: 0;
+            background: #0b1020;
+            color: #e9edf3;
+            }
+
+            .wrap{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px
+            }
+
+            .card {
+            max-width: 720px;
+            width: 100%;
+            background: #121831;
+            border: 1px;
+            solid: #223;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            }
+
+            h1 {
+            margin: 0 0 8px;
+            font-size: 28px;
+            line-height: 1.2;
+            }
+
+            .code {
+            display: inline-block;
+            font-weight: 700;
+            background: #1c2444;
+            border: 1px solid #2a3566;
+            padding: 4px 8px;
+            border-radius: 8px;
+            }
+
+            p {
+            margin: 10px 0;
+            color: #cdd5e1;
+            }
+
+            .actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            }
+
+            a.btn {
+            text-decoration: none;
+            padding: 10px 14px;
+            border: 1px solid #2a3566; 
+            background: #1c2444;
+            color: #fff;
+            }
+
+            a.btn:hover {
+            filter: brightness(1.1);
+            }
+
+            small {
+            color: #9aa6b2;
+            }
+            </style>
     </head>
     <body>
-        {% extends 'base.html' %}
-
-        {% block title %}Access Denied{% endblock %}
-
-        {% block content %}
-        <div style="text-align: center; padding: 50px;">
-            <h1 style="font-size: 60px; color: #d9534f; ">403</h1>
-            <h2>You don't have permission to access this page.</h2>
-            <p> Please contact the administrator if you believe this is a mistake.</p>
-            <a href="{% url 'home' %}" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #0275d8; color: white; border-radius: 5px; decoratiom: none">
-                Go Back Home
-            </a>
+        <div class="wrap">
+            <div class="card">
+                <div class="code">403.Forbidden</div>
+                <h1>Oops, you don't have permission to view this page.</h1>
+                <p>If you think this is a mistake, try signing in with the right account or contact support.</p>
+                {% if request.user.is_authenticated %}
+                <p><small>Signed in as {{ request.user.get_username }}</small></p>
+                {% endif %}
+                <div class="actions">
+                    <a class="btn" href="/">Go to Home</a>
+                    <a class="btn" href="{% url 'login' %}">Sign in</a>
+                    <a class="btn" href="javascript:history.back()">Go back</a>
+                </div>
+            </div>
         </div>
-        {% endbloc %}
     </body>
 </html>
