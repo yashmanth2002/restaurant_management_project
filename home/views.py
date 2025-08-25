@@ -78,6 +78,28 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.db.models import Avg
 from .models import RestaurantReview
+from django.shortcuts import render
+from django.db.models import Avg, Q
+from .models import RestaurantReview
+
+def home(request):
+    query = request.GET.get("q","")
+
+    avg_rating = RestaurantReview.objects.aggregate(Avg("rating"))["rating_avg"]
+
+    if query:
+        recent_reviews = RestaurantReview.objects.filter(
+            Q(comment_icontains=query)
+        ).order_by("-created_at")[:3]
+
+    else:
+        recent_reviews = RestaurantReview.objects.order_by("-created_at")[:3]
+
+    return render(request, "home/home.html", {
+        "avg_rating": avg_rating,
+        "recent_reviews": recent_reviews,
+        "query" : query,
+    })
 
 def home(request):
     avg_rating = RestaurantReview.objects.aggregate(Avg("rating"))["rating__avg"]
