@@ -85,6 +85,21 @@ from django.shortcuts import render
 from django.db.models import Avg
 from . models import RestaurantReview
 from django.shortcuts import render
+from django.shortcuts import render
+from .forms import ContactForm
+
+def contact_view(request):
+    submitted = False
+    if requested.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            submitted = True
+            form = ContactForm()
+        else:
+            form = ContactForm()
+
+        return render(request, 'contact.html', {'form': form, 'submitted': submitted})
 
 def custom_403(request, exception=None):
     return render(request, "403.html",  status=400)
