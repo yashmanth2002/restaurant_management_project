@@ -90,6 +90,13 @@ from .forms import ContactForm
 from django.shortcuts import render
 from .models import RestaurantInfo
 from django.shortcuts import render
+from django.shortcuts import render
+
+def clear_cart(request):
+    if 'cart' in request.session:
+        del request.session['cart']
+    return redirect('cart')
+
 
 def privacy_policy(request):
     return render(request, 'home/privacy.html')
