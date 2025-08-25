@@ -87,6 +87,12 @@ from . models import RestaurantReview
 from django.shortcuts import render
 from django.shortcuts import render
 from .forms import ContactForm
+from django.shortcuts import render
+from .models import RestaurantInfo
+
+def home(request):
+    restaurant = RestaurantInfo.objects.first()
+    return render(request, 'home.html', {'restaurant': restaurant})
 
 def contact_view(request):
     submitted = False
