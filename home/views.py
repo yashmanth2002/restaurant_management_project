@@ -89,6 +89,10 @@ from django.shortcuts import render
 from .forms import ContactForm
 from django.shortcuts import render
 from .models import RestaurantInfo
+from django.shortcuts import render
+
+def privacy_policy(request):
+    return render(request, 'home/privacy.html')
 
 def home(request):
     restaurant = RestaurantInfo.objects.first()
