@@ -66,7 +66,10 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.contrib import admin
+from django.urls import path, include
 
+handler403 = "home.views.custom_403"
 handler403 = "home.views.custom_403"
 
 
@@ -124,6 +127,8 @@ urlpatterns = [
     path("", include("home.urls")),
     pth("privacy-policy/", views.privacy_policy, name="privacy_policy")
     path("submit-review/", views.submit_reviews, name="submit_review"),
+    path("admin/", admin.site.urls),
+    path("", include("home.urls"))
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
