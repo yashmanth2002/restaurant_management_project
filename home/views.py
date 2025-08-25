@@ -75,6 +75,19 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from django.db.models import Avg
+from .models import RestaurantReview
+
+def home(request):
+    avg_rating = RestaurantReview.objects.aggregate(Avg("rating"))["rating__avg"]
+
+    recent_reviews = RestaurantReview.objects.order_by("-created_at")[:3]
+
+    return render(request, "home/home.html", {
+        "avg_rating": avg_rating,
+        "recent_reviews": recent_reviews,
+    })
 
 def privacy_policy(request):
     return render(request, "home/privacy_policy.html")
