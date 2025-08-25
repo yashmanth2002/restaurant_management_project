@@ -73,6 +73,10 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import ContactForm
+from django.shortcuts import render
+
+def custom_403(request, exception=None):
+    return render(request, "403.html", status=403)
 
 
 def contact_view(request):
