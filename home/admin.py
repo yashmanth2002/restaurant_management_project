@@ -5,6 +5,8 @@ from django.contrib import admin
 from .models import ContactInfo
 from django.contrib import admin
 from . models import RestaurantReview
+from django.contrib import admin
+from .models import RestaurantInfo
 
 class RestaurantContactAdmin(admin.ModelAdmin):
     list_display = ("address", "phone_number", "email")
@@ -12,3 +14,4 @@ class RestaurantContactAdmin(admin.ModelAdmin):
     list_display = ("user", "rating", "created_at")
     search_fields = ("user_username", "comment")
     list_filter = ("rating", "craeted_at")
+    admin.site.register(RestaurantInfo)
