@@ -74,6 +74,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 handler403 = "home.views.custom_403"
@@ -138,7 +140,8 @@ urlpatterns = [
     path("", include("home.urls")),
     path('', views.home, name='home'),
     path('privacy/', vies.privacy_policy, name="privacy")
-    
+    path('clear-cart/', views.clear_cart, name='clear_cart'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler403 = view.custom_permission_denied_view
