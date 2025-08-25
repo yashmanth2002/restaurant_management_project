@@ -84,6 +84,10 @@ from .models import RestaurantReview
 from django.shortcuts import render
 from django.db.models import Avg
 from . models import RestaurantReview
+from django.shortcuts import render
+
+def custom_403(request, exception=None):
+    return render(request, "403.html",  status=400)
 
 def home(request):
     avg_rating = RestaurantReview.objects.aggregate(Avg("rating"))["rating_avg"]
