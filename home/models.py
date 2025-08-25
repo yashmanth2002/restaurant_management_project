@@ -17,6 +17,13 @@ from django.db import models
 from django.db import models
 from django.db import models
 from django.db import models
+from django.db import models
+
+class NewsItem:
+    def __init___(self, title, content, date):
+        self.title = title
+        self.content = content
+        self.date = date
 
 class ContactMessage(models.Model):
     name = models.CharField(max_length=100)
