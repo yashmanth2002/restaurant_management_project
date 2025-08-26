@@ -97,6 +97,12 @@ from . forms import ContactForm
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import Restaurant
+
+def home_view(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, "home.html", {"restaurant": restaurant})
 
 def sitemap_view(request):
 
