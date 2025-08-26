@@ -182,5 +182,8 @@
                 </div>
             </section>
             <p>&copy; {{ current_year }}My Restaurant</p>
+            <p style="font-size:0.9em; color:gray;">
+                Last updated: {{ homepage.last_updated|timesince }} ago
+            </p>
     </body>
 </html>
