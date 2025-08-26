@@ -64,6 +64,25 @@
             font-style: normal;
             color: #555;
             }
+
+            #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            display: none;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            }
+
+            #scrollTopBtn:hover {
+            background-color: #0056b3;
+            }
             </style>
     </head>
     <body>
@@ -201,5 +220,24 @@
                 <p>We are always looking for talented individuals to join our team! stay tuned for upcoming career opportunities.</p>
             </section>
 
+            <button id="scrollTopBtn" title="Go to top">Top</button>
+
+            <script>
+
+                const scrollBtn = document.getElementById("scrollTopBtn");
+
+                window.onscroll = function() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollBtn.style.display = "block";
+                } else {
+                scrollBtn.style.display = "none"
+                }
+                };
+
+                scrollBtn.addEventListener("click", ()=> {
+                window.scrollT0({ top: 0, behaviour: "smooth"});
+
+                });
+                </script>
     </body>
 </html>
