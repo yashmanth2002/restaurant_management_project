@@ -99,6 +99,10 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from .models import Restaurant
+from django.shortcuts import render
+
+def privacy_view(request):
+    return render(request, "privacy.html")
 
 def home_view(request):
     restaurant = Restaurant.objects.first()
