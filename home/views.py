@@ -96,6 +96,20 @@ from django.shortcuts import render, redirect
 from . forms import ContactForm
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
+def sitemap_view(request):
+
+    pages = [
+        {"name": "Home", "url_name": "home"},
+        {"name": "Menu", "url_menu": "menu"},
+        {"name": "About US", "url_menu": "about us"},
+        {"name": "Contact Us", "url_menu": "contact us"},
+        {"name": "Privacy Policy", "url_menu": "privacy policy"},
+        {"name": "Terms of Service", "url_menu": "terms"},
+    ]
+
+    return render(request, "sitemap.html", {"pages": pages})
 
 
 def privacy_view(request):
