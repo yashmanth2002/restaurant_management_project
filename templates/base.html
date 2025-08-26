@@ -88,5 +88,23 @@
                 <li><a href="{% url 'terms' %}">Terms of Service</a></li>
             </ul>
         </nav>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'menu' %]">Menu</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                {% if user.is_authenticated %}
+                <li>
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </body>
 </html>
