@@ -1,253 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Spice Garden - Authentic Indian Cuisine in Hyderabad</title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>{{ restaurant.name }}</title>
         <style>
-            .hero {
-            position: relative;
-            width: 100%;
-            height: 70vh;
-            overflow: hidden;
+            body {
+            background-image: url("{% static 'home/images/home_bg.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
             }
 
-            .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            }
-
-            .hero-text {
-            position: absolute;
-            top: 50%
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
+            .overlay {
+            background-color: rgba(0,0,0,0.4);
+            min-height: 100vh;
             color: white;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 20px 40px;
-            border-radius: 10px;
-            }
-
-            .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            }
-
-            .hero-text p {
-           font-size: 1.5rem; 
-            }
-
-            .testimonials {
-            background: #f9f9f9;
-            padding: 60px 20px;
-            text-align: center;
-            }
-
-            testimonials h2 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            }
-
-            .testimonial {
-            background: white;
-            padding: 20px;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-            font-style: italic;
-            }
-
-            .testimonial h4 {
-            margin-top: 15px;
-            font-style: normal;
-            color: #555;
-            }
-
-            #scrollTopBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 100;
-            display: none;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            }
-
-            #scrollTopBtn:hover {
-            background-color: #0056b3;
+            padding: 40px;
             }
             </style>
     </head>
     <body>
-        {% block content %}{% endblock %}
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'menu' %}">Menu</a></li>
-                <li><a href="{% url 'contact' %">Contact</a></li>
-            </ul>
-        </nav>
-        {% extends 'base.html' %}
-        <h1>Welcome to Spice Garden</h1>
-
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="https://source.unsplash.com/800*400/?restaurant,food" alt="Restaurant Image 1">
-                <img src="https://source.unsplash.com/800*400/?cuisine" alt="Restaurant Image 2">
-                <img src="https://source.unsplash.com?800*400/?dining" alt="Restaurant Image 3">
-            </div>
-        </div>
-        {% endblock %}
-
-        <script>
-            let index = 0;
-            const images = document.querySelectorAll('.carousel-images img');
-
-            function showslide() {
-            images.forEach((img, i)) => {
-            img.style.display = (i == index)? 'block': 'none'
-            });
-            }
-            showslide();
-            setInterval(showslide, 3000)
-            </script>
-            <div class="text-center mt-4">
-                <a href="{% url 'reservations' %}" class="btn btn-primary btn-lg">
-                    Make a Reservation
-                </a>
-                {% extends 'base.html' %}
-
-                {% block content %}
-                <div class="container mt-5 text-center">
-                    <h1>Welcome to Flavors & Feast</h1>
-                    <p class="lead">Delicious meals, unforgettable experiences.</p>
-
-                    <div class="search-bar mt-4">
-                        <input type="text" id="searchInput" placeholder="Search our menu..." class="form-control d inline-block" style="width: 300px;">
-                        
-
-            </div>
-            <nav class="navbar">
-                <div class="container">
-                    <ul class="nav-links">
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'menu' %}">Menu</a></li>
-                        <li><a href="{% url 'about' %}">About Us</a></li>
-                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                    </ul>
-                </div>
-            </nav>
-            {% block content %}
-            {% endblock %}
-            <h2>Subscribe to Our Newsletter</h2>
-            <form method="post" action="#">
-                {% csrf_token %}
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-            <h1>Welcome to {{ restaurant.name }}</h1>
-            <p>{{ restaurant.description }}</p>
-            <p><strong>Address:</strong> {{ restaurant.address }}</p>
-            <section class="online-order-banner">
-                <img src="{% static 'images/online-order-banner.jpg %}" alt="Order Online Banner">
-                <div class="banner-text">
-                    <h2>Order Your Favorites Online!</h2>
-                    <p>Fast, Fresh, and delivered to you door.</p>
-                    <a href="/menu/" class="banner-btn">Start Ordering</a>
-                </div>
-            </section>
-            <div class="homepage-actions">
-                <a href="{% url 'cart' %}" class="cart-button">View Cart</a>
-            </div>
-            <div id="reviews-placeholder" style="text-align: center; margin: 40px 0; padding: 20px; border: 2px dashed #ccc; border-radius: 10px; background-color: #f9f9f9;">
-                <h2>Customer Reviews</h2>
-                <p>Reviews Coming Soon!</p>
-            </div>
-            <section class="hero">
-                <img src="/static/images/restaurant-hero.jpg"
-                alt="Delicious dishes served at our restaurant"
-                class="hero-image">
-
-                <div class="hero-text">
-                    <h1>Welcome to Our Restaurant</h1>
-                    <p>Experience the taste of authentic flavors</p>
-                </div>
-            </section>
-            <section class="testimonials">
-                <h2>What Our Customers Say</h2>
-                <div class="testimonial-container">
-
-                    <div class="testimonial">
-                        <h2>"The food was absolutely delicious and the service was top-notch.Highly recommend!"</p>
-                        <h4>- John D.</h4>
-                        </div>
-
-                        <div class="testimonial">
-                            <p>"A cozy atmosphere ith amazing flavors.I'll definitely be coming back!"</p>
-                            <h4>- Sarah M.</h4>
-                        </div>
-
-                        <div class="testimonial">
-                            <p>"Best dining experience I've had in years. Everything was perfect."</p>
-                            <h4>- Alex R.</h4>
-                        </div>
-                </div>
-            </section>
-            <p>&copy; {{ current_year }}My Restaurant</p>
-            <p style="font-size:0.9em; color:gray;">
-                Last updated: {{ homepage.last_updated|timesince }} ago
-            </p>
-            
+        <div class="overlay">
             <h1>Welcome to {{ restaurant.name }}</h1>
             <p>{{ restaurant.address }}</p>
-            <p>{{ restaurant.phone }}</p>
-
+            <p>Phone: {{ restaurant.phone }}</p>
             {% if restaurant.cuisine_type %}
             <p>Cuisine: {{ restaurant.cuisine_type }}</p>
             {% endif %}
-
-            <p>Current server time: {% now "F J, Y, g:i A" %}</p>
-
-            <section id="careers" style="mardin-top: 40px; padding: 20px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                <h2>Careers</h2>
-                <p>We are always looking for talented individuals to join our team! stay tuned for upcoming career opportunities.</p>
-            </section>
-
-            <button id="scrollTopBtn" title="Go to top">Top</button>
-
-            <script>
-
-                const scrollBtn = document.getElementById("scrollTopBtn");
-
-                window.onscroll = function() {
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                scrollBtn.style.display = "block";
-                } else {
-                scrollBtn.style.display = "none"
-                }
-                };
-
-                scrollBtn.addEventListener("click", ()=> {
-                window.scrollT0({ top: 0, behaviour: "smooth"});
-
-                });
-                </script>
-
-                <nav>
-                    <ul>
-                        <li><a href="{% url  'home' %}">Home</a></li>
-                        <li><a href="{% url 'menu' %}">Menu</a></li>
-                        <li><a href="{% url 'about' %}">About Us</a></li>
-                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                        <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
-                    </ul>
-                </nav>
+        </div>
     </body>
 </html>
