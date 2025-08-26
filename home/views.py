@@ -102,6 +102,11 @@ from .models import Restaurant
 from django.shortcuts import render
 from django.shortcuts import render
 from .models import MenuItem
+from django.shortcuts import render
+
+
+def privacy_policy(request):
+    return render(request, "privacy_policy.html")
 
 
 def home_view(request):
