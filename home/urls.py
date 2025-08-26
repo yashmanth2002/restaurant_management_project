@@ -145,6 +145,7 @@ urlpatterns = [
     path('clear-cart/', views.clear_cart, name='clear_cart'),
     path("logout/", auth_views.LogoutView.as_view(next_page="home"), name="logout"),
 
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler403 = view.custom_permission_denied_view
