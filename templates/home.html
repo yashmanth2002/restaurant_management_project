@@ -185,5 +185,16 @@
             <p style="font-size:0.9em; color:gray;">
                 Last updated: {{ homepage.last_updated|timesince }} ago
             </p>
+            
+            <h1>Welcome to {{ restaurant.name }}</h1>
+            <p>{{ restaurant.address }}</p>
+            <p>{{ restaurant.phone }}</p>
+
+            {% if restaurant.cuisine_type %}
+            <p>Cuisine: {{ restaurant.cuisine_type }}</p>
+            {% endif %}
+
+            <p>Current server time: {% now "F J, Y, g:i A" %}</p>
+
     </body>
 </html>
