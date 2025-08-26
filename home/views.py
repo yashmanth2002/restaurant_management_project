@@ -94,6 +94,10 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from . forms import ContactForm
+from django.shortcuts import render
+
+def terms_view(request):
+    return render(request, "terms.html")
 
 def contact_view(request):
     if request.method == "POST":
