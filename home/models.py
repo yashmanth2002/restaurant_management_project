@@ -21,6 +21,21 @@ from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
 from django.db import models
+from django.db import models
+from django.shortcuts import render
+from .models import HomePage
+
+def home_view(request):
+    homepage = HomePage.objects.first()
+    return render(request, "home.html", {"homepage": homepage})
+
+class HomePage(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
 
 class RestaurantInfo(models.Model):
     name = models.CharField(max_length=255, default="My Restaurant")
