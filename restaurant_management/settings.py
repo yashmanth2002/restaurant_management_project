@@ -253,3 +253,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "yourrestaurant@gmail.com"
 EMAIL_HOST_PASSWORD = "your_app_password"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+DEBUG = False
+ALLOWED_HOSTS = ['*']
