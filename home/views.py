@@ -95,6 +95,11 @@ from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from . forms import ContactForm
 from django.shortcuts import render
+from django.shortcuts import render
+
+
+def privacy_view(request):
+    return render(request, "privacy.html")
 
 def terms_view(request):
     return render(request, "terms.html")
