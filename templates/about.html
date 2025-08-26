@@ -95,5 +95,14 @@
         <img src="https://source.unspalsh.com/600*400/?restaurant,food"
         alt="About Us Image"
         style="max-width:100%; height:auto; border-radius:8px;">
+
+        {% load static %}
+
+        <h1>About Us</h1>
+        <p>Welcome to our restaurant! we serve delicious meals made with love.</p>
+
+        <img src="{% static 'home/images/about_us.jpg' %}"
+        alt="Our restaurant interior and team"
+        style="max-width:100%; height:auto;">
     </body>
 </html>
