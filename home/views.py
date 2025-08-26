@@ -91,6 +91,39 @@ from django.shortcuts import render
 from .models import RestaurantInfo
 from django.shortcuts import render
 from django.shortcuts import render
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from . forms import ContactForm
+
+def contact_view(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            user_email = form.cleaned_data.get("email")
+
+            send_mail(
+                subject="Thank You for Contacting Us",
+                message=(
+                    "Hello,\n\n"
+                    "Thank you for reaching out to us ! We have recieved your message"
+                    "and our team will get back to you shortly.\n\n"
+                    "Best regards,\n"
+                    "Your Restaurant Name"
+                    "Address: 123 Food Street, City\n"
+                    "Phone: +91-9876543210"
+                ),
+                from_email="yourrestaurant@gmail.com",
+                recipient_list=[user_email],
+                fail_silently=False,
+            )
+            return redirect("thank_you")
+
+        else:
+            form = ContactForm()
+
+        return render(request, "contact.html", {"form": form})
 
 def clear_cart(request):
     if 'cart' in request.session:
