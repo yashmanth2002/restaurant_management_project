@@ -54,6 +54,17 @@
 
             <button type="submit">Send Message</button>
         </form>
+        <script>
+            document.getElementById("contactForm").addEventListener("submit", function(event) {
+            let email = document.getElementById("email").value;
+            let emailPattern = /^[^s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            event.preventDefault();
+            }
+            })
+            </script>
     </body>
 </html>
             
