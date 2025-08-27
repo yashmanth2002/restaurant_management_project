@@ -80,6 +80,8 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 handler403 = "home.views.custom_403"
@@ -147,6 +149,7 @@ urlpatterns = [
     path('clear-cart/', views.clear_cart, name='clear_cart'),
     path("logout/", auth_views.LogoutView.as_view(next_page="home"), name="logout"),
     path("privacy-policy/", views.privacy_policy_view, name="privacy_policy"),
+    path('reviews/', views.reviews_list, name='reviews_list'),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
