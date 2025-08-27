@@ -1,0 +1,23 @@
+<h2>Menu</h2>
+ 
+ <div>
+    {% if vegan_only == "1" %}
+    <a href="{% url 'menu_list' %}">Show All Items</a>
+    {% else %}
+    <a href="?vegan=1">Show Only Vegan Items</a>
+    {% endif %}
+ </div>
+
+ <ul>
+    {% for item in items %}
+    <li>
+
+        <strong>{{ item.name }}</strong> {{ item.price }}
+        {% if item.is_vegan %}
+        <span style="color: green;">(Vegan)</span>
+        {% endif %}
+    </li>
+    {% empty %}
+    <li>No items available.</li>
+    {% endfor %}
+ </ul>
