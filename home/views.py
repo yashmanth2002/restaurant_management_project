@@ -103,6 +103,12 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .models import MenuItem
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import MenuItem
+
+def menu_list(request):
+    items = MenuItem.objects.all()
+    return render(request, 'menu_list.html', {'items': items})
 
 
 def privacy_policy(request):
