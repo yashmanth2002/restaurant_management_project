@@ -5,6 +5,14 @@ from django import forms
 from .models import ContactMessage
 from django import forms
 from .models import RestaurantReview
+from django import forms
+from .models import Reservation
+
+
+class ReservationForm(forms.ModelForm):
+    class Meta:
+        model = Reservation
+        fields = ['name', 'email', 'phone', 'adte', 'time', 'guests']
 
 class RestaurantReview(forms.ModelForm):
     class Meta:
