@@ -105,6 +105,26 @@ from .models import MenuItem
 from django.shortcuts import render
 from django.shortcuts import render
 from .models import MenuItem
+from django.db import render, redirect
+from .forms import ReservationForm
+
+
+
+def make_reservation(request):
+    if request.method == "POST":
+        form = ReservationForm(request.post)
+        if form.is_valid():
+            form.save()
+            return redirect('reservation_success')
+
+        else:
+            form = ReservationForm()
+
+        return render(request, 'reservations.html', {'form': form})
+
+def reservation_success(request):
+    return render(request, 'reservation_success.html')
+
 
 def menu_list(request):
     items = MenuItem.objects.all()
