@@ -25,6 +25,19 @@ from django.db import models
 from django.shortcuts import render
 from .models import HomePage
 from django.db import models
+from django.db import models
+
+
+class MenuItem(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    is_vegan = models.BooleanField(default=True)
+    cuisine = models.CharField(max_length=50, default="General")
+
+    def __str__(self):
+        return f"{self.name} ({self.cuisine})"
+
+
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=200)
