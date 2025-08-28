@@ -107,6 +107,11 @@ from django.shortcuts import render
 from .models import MenuItem
 from django.db import render, redirect
 from .forms import ReservationForm
+from django.shortcuts import render
+
+
+def blog_placeholder(request):
+    return render(request, 'blog_placeholder.html')
 
 
 
