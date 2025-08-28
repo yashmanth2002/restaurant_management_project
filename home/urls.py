@@ -90,6 +90,8 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
 
 
 
@@ -163,6 +165,7 @@ urlpatterns = [
     path('blog/', views.blog_placeholder, name='blog_placeholder')
     path('privacy/', views.privacy_policy, name='privacy_policy'),
     path('reservations/', views.reservations, name='reservations'),
+    path('reservations/', views.reservations, name='reservations')
 
 
 
