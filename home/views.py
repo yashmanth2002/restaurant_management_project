@@ -114,6 +114,15 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
+
+def home(request):
+    context = {
+        "restaurant_name": "Delicious Bites"
+
+    }
+    return render(request, "home.html", context)
 
 
 def menu(request):
