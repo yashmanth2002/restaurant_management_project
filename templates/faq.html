@@ -1,24 +1,64 @@
-{% block content %}
-<div class="faq-container">
-    <h2> Frequently Asked Questions</h2>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FAQ- Frequently Asked Questions</title>
+        <style>
+            body {
+            font-family: Arial,sans-serif;
+            background: #f9f9f9;
+            padding: 40px;
+            color: #333;
+            }
 
-    <div class="faq-item">
-        <h4>How do I place an order?</h4>
-        <p>You can browse the menu and add items to your cart. Once ready, proceed to checkout.</p>
-    </div>
+            .faq-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            }
 
-    <div class="faq-item">
-        <h4>Can I order without creating an account?</h4>
-        <p>Yes! We support guest checkout - just provide your contact details ordering.</p>
-    </div>
-<div class="faq-item">
-    <h4> How do I view my past orders?</h4>
-    <p>Logged-in users can view their order history fromthe dashboard. Guests can use their phone number or customer ID</p>
-</div> 
+            .faq-container h1{
+            text-align: center;
+            margin-bottom: 25px;
+            color: #444;
+            }
 
-    <div class="faq-item">
-        <h4>Is delivary available?</h4>
-        <p>Yes, We offer delivery within select areas. Check your address during checkout.</p>
-    </div>
-</div>
-{% endblock %}
+            .faq-item {
+            margin-bottom: 20px;
+            }
+
+            .faq-item h3 {
+            margin-bottom: 8px;
+            color: #007bff;
+            }
+
+            .faq-item p {
+            margin: 0;
+            line-height: 1.6;
+            }
+
+            </style>
+    </head>
+    <body>
+        <div class="faq-container">
+            <h1>Frequently Asked Questions</h1>
+
+            <div class="faq-item">
+                <h3>1. Do you offer home delivery?</h3>
+                <p>Yes, WE provide home delivery services within a 5km radius of our restaurant .</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>2. What payment methods do you accept?</h3>
+                <p>We accept cash, credit/debit cards, and popular mobile wallets like Google Pay and Paytm.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>3. Do I need a reservation</h3>
+                <p>Reservations are not required but are recommended during weekends and holidays to avoid waiting.</p>
+            </div>
+        </div>
+    </body>
+</html>
