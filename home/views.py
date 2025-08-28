@@ -108,6 +108,12 @@ from .models import MenuItem
 from django.db import render, redirect
 from .forms import ReservationForm
 from django.shortcuts import render
+from django.shortcuts import render
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
+
+    
 
 
 def blog_placeholder(request):
