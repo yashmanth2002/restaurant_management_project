@@ -84,6 +84,9 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
+
 
 
 handler403 = "home.views.custom_403"
@@ -153,6 +156,8 @@ urlpatterns = [
     path("privacy-policy/", views.privacy_policy_view, name="privacy_policy"),
     path('reviews/', views.reviews_list, name='reviews_list'),
     path('menu/', views.menu_list, name='menu_list'),
+    path('blog/', views.blog_placeholder, name='blog_placeholder')
+
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
