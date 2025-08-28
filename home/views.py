@@ -113,6 +113,11 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
+
+def menu(request):
+    return render(request, 'menu.html')
 
 def faq(request):
     return render(request, 'faq.html')
