@@ -110,6 +110,10 @@ from .forms import ReservationForm
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
+def reservations(request):
+    return render(request, 'reservations.html')
 
 def reservations(request):
     return render(request, 'reservations.html')
