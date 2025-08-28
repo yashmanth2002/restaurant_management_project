@@ -109,6 +109,11 @@ from django.db import render, redirect
 from .forms import ReservationForm
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
+def reservations(request):
+    return render(request, 'reservations.html')
+
 
 def privacy_policy(request):
     return render(request, 'privacy_policy.html')
