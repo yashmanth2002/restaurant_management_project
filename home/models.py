@@ -27,6 +27,13 @@ from .models import HomePage
 from django.db import models
 from django.db import models
 from django.db import models
+from django.db import models
+
+
+class RestaurantInfo(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    opening_hours = models.TextField()
 
 class Reservation(models.Model):
     name = models.CharField(max_length=100)
