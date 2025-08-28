@@ -111,6 +111,12 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
+
+def gallery(request):
+    return render(request, 'gallery.html')
+
 
 def reservations(request):
     return render(request, 'reservations.html')
