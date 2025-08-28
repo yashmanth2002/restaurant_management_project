@@ -96,6 +96,9 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import patj
+from . import views
+
 
 
 
@@ -176,6 +179,7 @@ urlpatterns = [
     path('gallery', views.gallery, name='gallery'),
     path('faq/', views.faq, name='faq'),
     path('menu/', viewa.menu, name='menu'),
+    path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
