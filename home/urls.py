@@ -175,6 +175,7 @@ urlpatterns = [
     path('reservations/', views.reservations, name='reservations')
     path('gallery', views.gallery, name='gallery'),
     path('faq/', views.faq, name='faq'),
+    path('menu/', viewa.menu, name='menu'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
