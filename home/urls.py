@@ -180,6 +180,7 @@ urlpatterns = [
     path('faq/', views.faq, name='faq'),
     path('menu/', viewa.menu, name='menu'),
     path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
+    path('privacy', views.privacy_policy, name="privacy_policy")
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
