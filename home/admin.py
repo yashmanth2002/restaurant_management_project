@@ -7,6 +7,8 @@ from django.contrib import admin
 from . models import RestaurantReview
 from django.contrib import admin
 from .models import RestaurantInfo
+from django.contrib import admin
+from .models import TermsOfService
 
 class RestaurantContactAdmin(admin.ModelAdmin):
     list_display = ("address", "phone_number", "email")
@@ -15,3 +17,4 @@ class RestaurantContactAdmin(admin.ModelAdmin):
     search_fields = ("user_username", "comment")
     list_filter = ("rating", "craeted_at")
     admin.site.register(RestaurantInfo)
+    admin.site.register(TermsOfService)
