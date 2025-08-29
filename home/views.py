@@ -116,6 +116,12 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import Restaurant
+
+def contact_us(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, "home/contact_us.html", {"restaurant": restaurant})
 
 def privacy_policy(request):
     return render(request, 'privacy_policy.html')
