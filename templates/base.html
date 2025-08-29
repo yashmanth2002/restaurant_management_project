@@ -168,5 +168,12 @@
         </p>
         </div>
         {% endblock %}
+        <footer>
+            <p>&copy; {{ year }} My Restaurant</p>
+            <p>
+                <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
+                <a href="{% url 'terms_of_service' %}">Terms of service</a>
+            </p>
+        </footer>
     </body>
 </html>
