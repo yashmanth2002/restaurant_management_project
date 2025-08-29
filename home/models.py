@@ -44,6 +44,7 @@ class TermsofService(models.Model):
 class Restaurant(models.Model):
     name = models.CharField(max_length=200)
     address = models. TextField()
+    privacy_policy = models.TextField(default="Our privacy policy will be displayed here")
 
     def __str__(self):
         return self.name
