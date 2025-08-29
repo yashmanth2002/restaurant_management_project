@@ -70,6 +70,24 @@
             text-align: center;
             margin-top: 10px;
             }
+
+            .restaurant-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 8px;
+            }
+
+            .restaurant-info h3 {
+            margin-bottom: 10px;
+            color: #333;
+            }
+
+            .restaurant-info p {
+            margin: 0;
+            color: #555;
+            white-space: preline;
+            }
             </style>
     </head>
     <body>
@@ -92,5 +110,10 @@
             </form>
             <p class="form-note">We'll get back to you within 24 hours.</p>
         </div>
+        <div class="restaurant-info">
+            <h3>Our Address</h3>
+            <p>{{ restaurant.address }}</p>
+        </div>
+        {% endif %}
     </body>
 </html>
