@@ -30,6 +30,16 @@ from django.db import models
 from django.db import models
 from django.db import models
 from django.db import models
+from django.db import models
+
+
+class TermsofService(models.Model):
+    content = models.TextField(help_text="Enter the terms of service for the restaurant")
+
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Terms of service (Last updated: [self.updated_at.strftime('%Y-%m-%d')])"
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=200)
