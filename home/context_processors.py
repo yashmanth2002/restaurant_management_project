@@ -1,7 +1,12 @@
 from .models import RestaurantInfo
 import datetime
 from django.conf import settings
+from .models import Resstaurant
 
+
+def restaurant_info(request):
+    info = Resstaurant.objects.first()
+    return {"restaurant_info": info}
 
 def restaurant_info(request):
     try:
