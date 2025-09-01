@@ -1,83 +1,77 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Feedback</title>
+        <title>User Feedback</title>
         <style>
             body {
             font-family: Arial, sans-serif;
-            background: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            padding: 50px;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
             }
 
-            .feedback-form {
-            background: white;
-            padding: 20px 30px;
-            border-radius: 8px;
+            .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            width: 400px;
             }
 
-            .feedback-form h2 {
-            margin-bottom: 20px;
+            h1 {
             text-align: center;
+            margin-bottom: 20px;
             color: #333;
             }
 
-            .feedback-form label {
+            label {
             display: block;
-            margin-top: 10px;
-            color:  #555;
+            margin-bottom: 8px;
+            font-weight: bold;
             }
 
-            .feedback-form input,
-            .feedback-form textarea {
+            input, textarea {
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
-            font-sixe: 14px;
+            border-radius: 6px;
+            font-size: 16px;
             }
 
-            .feedback-form textarea {
-            height: 100px;
+            textarea {
+            height: 120px;
             resize: vertical;
             }
 
-            .feedback-form button {
-            margin-top: 15px;
-            width: 100%;
-            padding: 10px;
-            background: #007bff;
-            border: none;
-            border-radius: 5px;
+            button {
+            background-color: #0275d8;
             color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
             font-size: 16px;
             cursor: pointer;
             }
 
-            .feedback-form button:hover {
-            background: #0056b3;
+            button: hover{
+            background-color: #025aa5;
             }
             </style>
     </head>
     <body>
+        <div class="container">
+            <h1>Feedback Form</h1>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
 
-        <div class="feedback-form">
-            <h2>Submit Your Feedback</h2>
-            <form method="post">
-                {% csrf_token %}
-                
-                <label for="id_name">Name</label>
-                <input type="text" id="id_name" name="name" placeholder="Your Name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
 
-                <label for="id_email">Email</label>
-                <input type="email" id="id_email" name="email" placeholder="Your Email" required>
-
-                <label for="id_message">Message</label>
-                <textarea id="id_message" name="message" placeholder="Write your feedback here..." required></textarea>
+                <label for="message">Feedback</label>
+                <textarea id="message" name="message" placeholder="Write your feedback here ..." required></textarea>
 
                 <button type="submit">Submit Feedback</button>
             </form>
