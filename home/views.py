@@ -122,6 +122,10 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import render
 from .models import Restaurant
+from django.shortcuts import render
+
+def privacy_policy(request):
+    return render(request, "privacy_policy.html")
 
 def privacy_policy(request):
     restaurant = Restaurant.objects.first()
