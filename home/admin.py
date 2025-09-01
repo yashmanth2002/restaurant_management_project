@@ -9,6 +9,12 @@ from django.contrib import admin
 from .models import RestaurantInfo
 from django.contrib import admin
 from .models import TermsOfService
+from django.contrib import admin
+from .models import FAQ
+
+@admin.register(FAQ)
+class FAQ@Admin(admin.ModelAdmin):
+    list_display = ("question")
 
 class RestaurantContactAdmin(admin.ModelAdmin):
     list_display = ("address", "phone_number", "email")
