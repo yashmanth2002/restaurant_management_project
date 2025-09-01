@@ -124,6 +124,12 @@ from django.shortcuts import render
 from .models import Restaurant
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import FAQ
+
+def faq(request):
+    faq_entries = FAQ.objects.all()
+    return render(request, "home/faq.html", {"faq_entries": faq_entries})
 
 
 def faq(request):
