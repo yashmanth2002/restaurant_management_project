@@ -178,5 +178,20 @@
             </p>
         </footer>
         </nav>
+        <header>
+            <nav>
+            </nav>
+            <div class="contact-info" style="text-align:right; padding:10px;">
+                {% if restaurant_info %}
+                <strong>Call Us:</strong>{{ restaurant_info.formatted_phone }}</p>
+                {% endif %}
+            </div>
+        </header>
+
+        <footer style="background:#f8f9fa; padding:15px; text-align:center;">
+            {% if restaurant_info %}
+            <p>&copy; 2025{{ restaurant_info.name }} | phone: {{ restaurant_info.formatted_phone }}</p>
+            {% endif %}
+        </footer>
     </body>
 </html>
