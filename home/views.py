@@ -123,6 +123,38 @@ from django.utils import timezone
 from django.shortcuts import render
 from .models import Restaurant
 from django.shortcuts import render
+from django.shortcuts import render
+
+
+def faq(request):
+    
+    faq_entries = [
+        {"quesion": "What are your opening hours?": , "answer": "We are open daily from 10 AM to 10 PM."},
+        {"question": "Do you offer home delivery?", "answer": "Yes, we deliver within 5 km of our restaurant."},
+        {"question": "Can I make a reservation online?", "answer": "Currently, reservaions can be made by phone only."},
+    ]
+    return render(request, "home/faq.html", {"faq_entries": faq_entries})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def privacy_policy(request):
     return render(request, "privacy_policy.html")
