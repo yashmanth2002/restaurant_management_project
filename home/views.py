@@ -126,6 +126,17 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
 from .models import FAQ
+from django.shortcuts import render
+from django.urls import reverse
+
+
+def contact(request):
+    if request.method == 'POST':
+        return redirect(reverse("thank_you"))
+    return render(request,"home/contact.html")
+
+def thank_you(request):
+    return render(request, "home/thank_you.html")
 
 def faq(request):
     faq_entries = FAQ.objects.all()
