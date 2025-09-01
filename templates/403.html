@@ -74,20 +74,12 @@
             </style>
     </head>
     <body>
-        <div class="wrap">
-            <div class="card">
-                <div class="code">403.Forbidden</div>
-                <h1>Oops, you don't have permission to view this page.</h1>
-                <p>If you think this is a mistake, try signing in with the right account or contact support.</p>
-                {% if request.user.is_authenticated %}
-                <p><small>Signed in as {{ request.user.get_username }}</small></p>
-                {% endif %}
-                <div class="actions">
-                    <a class="btn" href="/">Go to Home</a>
-                    <a class="btn" href="{% url 'login' %}">Sign in</a>
-                    <a class="btn" href="javascript:history.back()">Go back</a>
-                </div>
-            </div>
+        <div class="error-container">
+            <h1>403</h1>
+            <h2>Forbidden</h2>
+            <p>Sorry, you don't have permission to access this page.<br>
+            If you believe this is an error, please contact support.</p>
+            <a href="/">Go Back Home</a>
         </div>
     </body>
 </html>
