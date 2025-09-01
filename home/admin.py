@@ -15,6 +15,12 @@ from django.contrib import admin
 from .models import RestaurantInfo
 from django.contrib import admin
 from .models import Restaurant
+from django.contrib import admin
+from .models import Restaurant
+
+@admin.register(Restaurant)
+class RestaurantInfo(admin.ModelAdmin):
+    list_display = ("name", "phone_number")
 
 @admin.register(admin.ModelAdmin)
 class RestaurantAdmin(admin.ModelAdmin):
