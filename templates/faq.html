@@ -60,5 +60,23 @@
                 <p>Reservations are not required but are recommended during weekends and holidays to avoid waiting.</p>
             </div>
         </div>
+        {% extends "base.html" %}
+
+        {% block title %}FAQ- My Restaurant{% endblock %}
+
+        {% block content %}
+        <div class="faq-container" style="max-width:800px, margin:auto; padding:30px;">
+            <h1 style="text-align:center; margin-bottom:20px;">Frequently Asked Questions</h1>
+
+            {% for item in faq_entries %}
+            <div style="margin-bottom:20px; padding:15px; border: 1px solid #ddd; border-radiys: 8px; background:#fff">
+                <h3 style="margin-bottom:10px; color:#0275d8">{{ item.question }}</h3>
+                <p style="margin:0; color:#333;">{{ item.answer }}</p>
+            </div>
+            {% empty %}
+            <p>NO FAQs available at the moment.</p>
+            {% endfor %}
+        </div>
+        {% endblock %}
     </body>
 </html>
