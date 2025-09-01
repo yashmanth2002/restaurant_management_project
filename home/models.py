@@ -35,6 +35,29 @@ from django.db import models
 from django.db import models
 from django.db import models
 from django.db import models
+from django.db import models
+
+class Restaurant(models.Model):
+    name = models.CharField(max_length=255)
+    address = models.TextField()
+    phone_number = models.CharField(
+        max_length=20;
+        help_text="Enter phone number in international format (e.g., +91 98765 43210)"
+    )
+
+    def __str__(self):
+        return self.name
+
+    def formatted_phone(self):
+        """
+        Format phone number for display (basic example).
+        Example: +919876543210 + 91 98765 43210
+        """
+
+        num = self.phone_number(" ", " ").replace(" ", " ")
+        if num.startswith("+91") and len(num) == 13:
+            return f"{num[:3]} {num[3:8]} {num[8:]}"
+        return self.phone_number
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=255)
