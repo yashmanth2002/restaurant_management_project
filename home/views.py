@@ -128,6 +128,12 @@ from django.shortcuts import render
 from .models import FAQ
 from django.shortcuts import render
 from django.urls import reverse
+from django.shortcuts import render
+from .models import Special
+
+def specials_view(request):
+    specials = Special.objects.all()
+    return render(request, 'home/specials.html', {'specials': specials})
 
 
 def contact(request):
