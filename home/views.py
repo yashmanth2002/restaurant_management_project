@@ -134,6 +134,23 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.shortcuts import render
 from .models import MenuCategory
+from django .shortcuts import render, redirect
+from .forms import ContactForm
+from .models import Restaurant
+
+def contact_view(request):
+    restaurant = Restaurant.objects.first()
+    if request.method=='POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            return redirect('thank_you')
+
+        else: 
+            form = ContactForm()
+        return render(request, 'home/contact.html', {
+            'form': form,
+            'restaurant': restaurant
+        })
 
 
 def home_view(request):
