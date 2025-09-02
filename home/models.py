@@ -36,6 +36,17 @@ from django.db import models
 from django.db import models
 from django.db import models
 from django.db import models
+from django.db import models
+
+class special(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    is_daily = models.BooleanField(default=True)
+    available_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=255)
