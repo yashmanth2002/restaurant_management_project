@@ -130,6 +130,30 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.shortcuts import render
 from .models import Special
+from django.shortcuts import render, redirect
+from .forms import ContactForm
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.post)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+
+            return redirect('thank_you')
+
+        else:
+            form = ContactForm
+        return render(request, 'home/contact.html', {'form': form})
+
+
+
+
+
+
 
 def specials_view(request):
     specials = Special.objects.all()
