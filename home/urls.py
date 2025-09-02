@@ -104,6 +104,9 @@ from django.urls import path
 from . import views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
+
 
 
 
@@ -191,6 +194,7 @@ urlpatterns = [
     path("faq/", views.faq, name="faq")
     path("contact/", views.contact, name="contact"),
     path("thank-you/", views.thank_you, name="thank_you"),
+    path('', views.home_view, name='home'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
