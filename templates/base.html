@@ -193,5 +193,9 @@
             <p>&copy; 2025{{ restaurant_info.name }} | phone: {{ restaurant_info.formatted_phone }}</p>
             {% endif %}
         </footer>
+        <div class="restaurant-info">
+            <h1>{{ restaurant.name }}</h1>
+            <p>{{ restaurant.description|default: "Welcome to our restaurant! We serve delicious food."}}</p>
+        </div>
     </body>
 </html>
