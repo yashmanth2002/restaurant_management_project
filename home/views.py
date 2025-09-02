@@ -132,6 +132,13 @@ from django.shortcuts import render
 from .models import Special
 from django.shortcuts import render, redirect
 from .forms import ContactForm
+from django.shortcuts import render
+from .models import MenuCategory
+
+
+def home_view(request):
+    categories = MenuCategory.objects.all()
+    return render(request, 'home/home.html', {'categories': categories})
 
 
 def contact_view(request):
