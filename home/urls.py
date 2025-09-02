@@ -195,6 +195,7 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path("thank-you/", views.thank_you, name="thank_you"),
     path('', views.home_view, name='home'),
+    path('menu/', views.menu_view, name='menu')
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
