@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="page-title">Our Specials</h1>
+    <p class="subtitle">Enjoy our daily & weekly offers</p>
+
+    <div class="specials-list">
+        {% for special in Specials %}
+        <div class="special-card">
+            <h2>{{ special.title }}</h2>
+            <p>{{ special.description }}</p>
+            <p class="price">{{ special.price }}</p>
+            {% if special.is_daily %}
+            <span class="badge">Daily Special</span>
+            {% else %}
+            <span class="badge weekly">Weekly Special</span>
+            {% endif %}
+        </div>
+        {% empty %}
+        <p>No specials available at the moment. Please check back later!</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
