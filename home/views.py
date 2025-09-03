@@ -138,6 +138,12 @@ from django .shortcuts import render, redirect
 from .forms import ContactForm
 from .models import Restaurant
 from django.db import models
+from django.db import render
+from .models import Restaurant
+
+def homepage(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, "home/index.html", {"restaurant": restaurant})
 
 
 
