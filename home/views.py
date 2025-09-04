@@ -150,6 +150,11 @@ from django.shortcuts import render
 from . forms import ContactForm
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+
+def home(request):
+    query = request.GET.get("q")
+    return render(request, "home.html", {"query": query})
 
 def specials(request):
     return render(request, "specials.html")
