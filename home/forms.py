@@ -8,6 +8,12 @@ from .models import RestaurantReview
 from django import forms
 from .models import Reservation
 from django import forms
+from django import forms
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
 
 class ContactForm(forms.Form):
     name = forms.CharField(  
