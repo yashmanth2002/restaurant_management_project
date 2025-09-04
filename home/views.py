@@ -151,6 +151,25 @@ from . forms import ContactForm
 from django.shortcuts import render
 from django.shortcuts import render
 from django.shortcuts import render
+from django.shortcuts import render
+from . forms import ContactForm
+
+def contact_us(request):
+    message_sent = False
+
+    if request.mehod == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            message_sent = True
+            form = ContactForm()
+
+    else:
+        form = ContactForm()
+
+    return render(request, "contact_us.html", {
+        "form": form,
+        "message_sent": message_sent
+    })
 
 def home(request):
     query = request.GET.get("q")
