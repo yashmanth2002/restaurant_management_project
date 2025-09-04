@@ -1,46 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{ restaurant.name }}</title>
-        <style>
-            body {
-            background-image: url("{% static 'home/images/home_bg.jpg' %}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            }
-
-            .overlay {
-            background-color: rgba(0,0,0,0.4);
-            min-height: 100vh;
-            color: white;
-            padding: 40px;
-            }
-            </style>
+        <title>Restaurant Homepage</title>
     </head>
     <body>
-        <div class="overlay">
-            <h1>Welcome to {{ restaurant.name }}</h1>
-            <p>{{ restaurant.address }}</p>
-            <p>Phone: {{ restaurant.phone }}</p>
-            {% if restaurant.cuisine_type %}
-            <p>Cuisine: {{ restaurant.cuisine_type }}</p>
-            {% endif %}
-        </div>
+        <header>
+            Welcome to our Restaurant
+            <p><strong>Call Us: {{ phone_number }}</strong></p>
+        </header>
 
-        <form method="get" action="{% url 'home' %}">
-            <input type="text" name="q" placeholder="Search menu items..." value="{{ query|default: ''}">
-            <button type="submit">Search</button>
-
-            <ul>
-                {% for item in menu_items %}
-                <li>{{ item.name }} - {{ item.price }}</li>
-                {% empty %}
-                <li>No menu items found.</li>
-                {% endfor %}
-            </ul>
+        <main>
+            <p>Enjoy delicious food and a great atmosphere!</p>
+        </main>
     </body>
 </html>
