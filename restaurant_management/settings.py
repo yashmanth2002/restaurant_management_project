@@ -263,3 +263,7 @@ ALLOWED_HOSTS = ['*']
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'admin@example.com'
 ADMIN_EMAIL = 'admin@example.com'
+
+DEFAULT_FROM_EMAIL = "no-reply@myrestaurant.com",
+ADMIN_EMAIL = "owner@myrestaurant.com"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
