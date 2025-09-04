@@ -110,6 +110,10 @@ from django.urls import path
 from . import  views
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
+
+
 
 
 
@@ -203,6 +207,9 @@ urlpatterns = [
     path('menu/', views.menu_view, name='menu')
     path("contact/", views.contact_us, name="contact_us"),
     path("", views.home, name="home"),
+    path("menu/", views.menum name="menu"),
+    path("contact/", views.contact_us, name="contact_us"),
+    path("specials/", views.specials, name="specials")
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
