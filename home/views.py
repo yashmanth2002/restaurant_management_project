@@ -140,6 +140,38 @@ from .models import Restaurant
 from django.db import models
 from django.db import render
 from .models import Restaurant
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.conf import settings
+from .forms import ContactForm
+
+
+def contact_us(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            subject = f"New Contact Us submission from {name}"
+            body = f"Message from {name} ({email}):\n\n{message}"
+
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.ADMIN_EMAIL],
+                fail_silently=False,
+            )
+
+            return redirect("thank_you")
+
+        else: 
+            form = ContactForm()
+
+        return render(request, "contact_us.html", {"form":form})
 
 def homepage(request):
     restaurant = Restaurant.objects.first()
