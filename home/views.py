@@ -146,6 +146,24 @@ from django.conf import settings
 from .forms import ContactForm
 from django.shortcuts import render
 from .models import Restaurant
+from django.shortcuts import render
+from . forms import ContactForm
+
+def contact_us(request):
+    message_sent = False
+
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            message_sent = True
+            form = ContactForm()
+    else:
+        form = ContactForm()
+
+    return render(request, "contact_us.html", {
+        "form": form,
+        "message_sent": message_sent
+    })
 
 
 def home(request):
