@@ -144,6 +144,16 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm
+from django.shortcuts import render
+from .models import Restaurant
+
+
+def home(request):
+
+    restaurant = Restaurant.objects.first()
+    phone_number = restaurant.phone_number if restaurant else "N/A"
+
+    return render(request, "home.html", {"phone_number":phone_number})
 
 
 def contact_us(request):
