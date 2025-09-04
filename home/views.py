@@ -148,6 +148,10 @@ from django.shortcuts import render
 from .models import Restaurant
 from django.shortcuts import render
 from . forms import ContactForm
+from django.shortcuts import render
+
+def menu(request):
+    return render(request, "menu.html")
 
 def contact_us(request):
     message_sent = False
