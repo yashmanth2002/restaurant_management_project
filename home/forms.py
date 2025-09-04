@@ -9,6 +9,11 @@ from django import forms
 from .models import Reservation
 from django import forms
 from django import forms
+from django import forms
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100, label="Your Name")
+    email = forms.EmailField(label="Your Email")
 
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=100)
