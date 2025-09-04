@@ -149,6 +149,10 @@ from .models import Restaurant
 from django.shortcuts import render
 from . forms import ContactForm
 from django.shortcuts import render
+from django.shortcuts import render
+
+def specials(request):
+    return render(request, "specials.html")
 
 def menu(request):
     return render(request, "menu.html")
