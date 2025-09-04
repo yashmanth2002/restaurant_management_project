@@ -9,6 +9,21 @@
             <p><strong>Call Us: {{ phone_number }}</strong></p>
         </header>
 
+        <form method="get" action="">
+            <input type="text" name="q" placeholder="Search menu items..." value="{{ queryquery|default:''}}">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if query %}
+        <h2>Search Results for "{{ query }}"</h2>
+        <p>(This is just a placeholder. Actual menu search will be implemented later.)</p>
+        {% endif %}
+
+        <main>
+            <p>Enjoy delicious food and a great atmosphere!</p>
+        </main>
+        
+
         <main>
             <p>Enjoy delicious food and a great atmosphere!</p>
         </main>
