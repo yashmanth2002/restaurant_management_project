@@ -160,6 +160,16 @@ from django.shortcuts import render
 from .models import Restaurant
 from django.shortcuts import render
 from .models import Restaurant
+from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
+
+
+def place_order(request):
+    if request.method == "POST":
+        return redirect("order_thank_you")
+    return render(request, "order_form.html")
+
+    
 
 
 def about_view(request):
