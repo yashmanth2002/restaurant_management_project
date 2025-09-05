@@ -114,6 +114,9 @@ from django.urls import path
 from . import views
 from django.urls import path
 from django.views.generic import TemplateView
+from django.urls import path
+from django.views.generic import TemplateView
+from . import views
 
 
 
@@ -219,6 +222,11 @@ urlpatterns = [
       ),  name="thank_you_contact"),
 
       path("about/", views.about_view, name="about"),
+
+      path("order/", views.place_order, name="place_order"),
+      path("order/thank-you/", TemplateView.as_view(
+        template_name = "order_thank_you.html"
+      ), name="order_thank_you"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
