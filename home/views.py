@@ -158,6 +158,13 @@ from .models import MenuItem
 from django.shortcuts import render, redirect
 from django.shortcuts import render
 from .models import Restaurant
+from django.shortcuts import render
+from .models import Restaurant
+
+
+def about_view(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, "about.html", {"restaurant": restaurant})
 
 def home(request):
     restaurant = Restaurant.objects.first()
