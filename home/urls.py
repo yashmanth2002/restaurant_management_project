@@ -213,6 +213,10 @@ urlpatterns = [
     path("contact/", views.contact_us, name="contact_us"),
     path("specials/", views.specials, name="specials")
     path("thank-you/", TemplateView.as_view(template_name="thank_you.html"), name="thank_you")
+    path("contact/", views.contact_view, name="contact"),
+    path("thank-you-contact/", TemplateView.as_view(
+        template_name = "thank_you_contact.html"
+      ),  name="thank_you_contact"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
