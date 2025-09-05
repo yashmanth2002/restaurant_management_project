@@ -155,6 +155,12 @@ from django.shortcuts import render
 from . forms import ContactForm
 from django.shortcuts import render
 from .models import MenuItem
+from django.shortcuts import render, redirect
+
+def contact_view(request):
+    if request.method == "POST":
+        return redirect("thank_you")
+    return render(request, "contact.html")
 
 def menu(request):
     items = MenuItem.objects.all()
