@@ -42,6 +42,16 @@ from django.db import models
 from django.db import models
 from django.db import models
 from django.db import models
+from django.db import models
+
+class MenuItem(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.CharField(max_digits=6, decimal_places=2)
+    description = models.TextField(blank=True)
+    average_rating = models.FloatField(default=4.5)
+
+    def __str__(self):
+        return self.name
 
 class MenuItem(models.Model):
     name = models.CharField(max_length=200)
