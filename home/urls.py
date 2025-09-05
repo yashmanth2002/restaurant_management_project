@@ -218,6 +218,8 @@ urlpatterns = [
         template_name = "thank_you_contact.html"
       ),  name="thank_you_contact"),
 
+      path("about/", views.about_view, name="about"),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler403 = view.custom_permission_denied_view
