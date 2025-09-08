@@ -220,6 +220,7 @@ urlpatterns = [
         template_name = "order_thank_you.html"
       ), name="order_thank_you"),
       path("faq/", faq_view, name="faq"),
+      path("", home, name="home"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
