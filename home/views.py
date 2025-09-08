@@ -162,6 +162,10 @@ from django.shortcuts import render
 from .models import Restaurant
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
+from django.shortcuts import render
+
+def faq_view(request):
+    return render(request, "faq.html")
 
 
 def place_order(request):
