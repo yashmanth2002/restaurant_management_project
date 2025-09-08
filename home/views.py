@@ -163,6 +163,10 @@ from .models import Restaurant
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.shortcuts import render
+from django.shortcuts import render
+
+def home(request):
+    return render(request, "home.html")
 
 def faq_view(request):
     return render(request, "faq.html")
