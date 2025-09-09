@@ -5,5 +5,16 @@
     </head>
     <body>
         {% block content %}{% endblock %}
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Your Restaurant Name</p>
+                <ul class="footer-links">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'menu' %}">Menu</a></li>
+                    <li><a href="{% url 'contact' %}">Contacts</a></li>
+                    <li><a href="{% url 'reservations %">Reservations</a></li>
+                </ul>
+            </div>
+        </footer>
     </body>
 </html>
