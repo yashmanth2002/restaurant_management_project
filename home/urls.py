@@ -119,6 +119,8 @@ from django.views.generic import TemplateView
 from . import views
 from django.urls import path
 from .views import faq_view
+from django.urls import path
+from . import views
 handler403 = "home.views.custom_403"
 handler403 = "home.views.custom_403"
 
@@ -221,6 +223,9 @@ urlpatterns = [
       ), name="order_thank_you"),
       path("faq/", faq_view, name="faq"),
       path("", home, name="home"),
+      path('menu/', views.menu, name='menu'),
+      path('contact/', views.contact, name="contact"),
+      path('reservations/', views.reservation, name="Reservations"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
